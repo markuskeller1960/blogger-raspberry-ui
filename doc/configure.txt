@@ -1,0 +1,75 @@
+
+This file describes the configuration of Angular-Cli to add special features used in this application.
+For an instruction about installing all special features read README.md first.
+
+*****************************************************************************************************************
+
+Activating SASS:
+
+In directory /src:
+rename styles.css to styles.scss
+
+Edit angular-cli.json
+Replace "styles.css" with "styles.scss"
+Replace "styleExt": "css" with "styleExt": "scss"
+
+*****************************************************************************************************************
+
+Import the Angular Material NgModule:
+
+Edit src/app/app.module.ts add:
+
+import { MaterialModule } from '@angular/material';
+// other imports
+@NgModule({
+  imports: [MaterialModule.forRoot()],
+  ...
+})
+
+Add to styles.scss
+
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+deeppurple-amber.css is just an example
+
+*****************************************************************************************************************
+
+HammerJS:
+
+Edit src/app/app.module.ts add:
+
+import 'hammerjs';
+
+You need to add hammerjs to the types section of your tsconfig.json file:
+
+{
+  "compilerOptions": {
+    "types": [
+      "hammerjs"
+    ]
+  }
+}
+
+*****************************************************************************************************************
+
+Material Design icons with md-icon:
+
+Edit src/index.html
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+*****************************************************************************************************************
+
+FontAwesome;
+
+Add to styles.scss
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+*****************************************************************************************************************
+
+
+
+
+
+

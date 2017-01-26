@@ -1,8 +1,8 @@
 # Blogger Raspberry PI
 
-This project uses [Angular-CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+This [Angular 2 Project](https://angular.io/) uses [Angular-CLI](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
-## System configuration
+## System Configuration
 
 Please follow these steps in the given order:
 
@@ -12,6 +12,7 @@ Please follow these steps in the given order:
 
 
 ## Checkout to IntelliJ
+
 1. Start IntelliJ and close your current project if it was opened by default. In the menu choose 'Checkout from version control'. Select GIT from the list and fill out the form with the required values ( URL: **https://github.com/markuskeller1960/blogger-raspberry-ui.git** ). IntelliJ will automatically recognize the Angular-CLI project. 
 
 2. Install Font Awesome local (run **npm install font-awesome --save** in the newly created project directory).
