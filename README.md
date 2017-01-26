@@ -10,8 +10,6 @@ Please follow these steps in the given order:
 
 2. Install [Angular-CLI](https://github.com/angular/angular-cli) as described at the Angular-CLI website ( with npm ). Please note Angular-CLI uses Webpack since version beta.14.
 
-**Important**: You may find tutorials on the net with SystemJS configuration even at the official Angular2 website. These tutorials don't work any longer and cause problems. For example: Module ID's are no longer needed and keep Webpack from building.
-
 
 ## Checkout to IntelliJ
 1. Start IntelliJ and close your current project if it was opened by default. In the menu choose 'Checkout from version control'. Select GIT from the list and fill out the form with the required values ( URL: **https://github.com/markuskeller1960/blogger-raspberry-ui.git** ). IntelliJ will automatically recognize the Angular-CLI project. 
