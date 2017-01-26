@@ -29,7 +29,7 @@ Please follow these steps in the given order:
 
 1. Read the [Angular Style Guide](https://angular.io/styleguide) first.
 
-2. The OPEn code ist written in Typescript. Do not mix Typescript with JavaScript.
+2. The Code ist written in Typescript. Do not mix Typescript with JavaScript.
 
 3. Some tutorials use deprecated code with no injections. Use injections when ever possible.
 
