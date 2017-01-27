@@ -1,0 +1,12 @@
+<md-sidenav-container class="flex-container">
+  <md-sidenav mode="side" #sidenav class="app-sidenav">
+    <div class="app-sidenav-head flex-container">
+      <p></p>
+    </div>
+    <app-main-sidenav></app-main-sidenav>
+  </md-sidenav>
+  <div class="app-content flex-container">
+    <app-main-toolbar (onSideBarItemClicked)="sidenav.toggle()"></app-main-toolbar>
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>

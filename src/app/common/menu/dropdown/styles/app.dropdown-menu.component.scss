@@ -1,0 +1,23 @@
+@import "../../../../../assets/style/global";
+
+.app-menu-item-container {
+  display: block;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-menu-button {
+  position: relative;
+  width: 90%;
+  text-align: start;
+  color: $raspi-font-color-menu;
+  font-size: 14px;
+}
+
+.app-menu-icon-button {
+  @extend .app-menu-button;
+  font-size: 14px;
+  width: 100%;
+}

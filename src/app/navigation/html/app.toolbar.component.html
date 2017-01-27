@@ -1,0 +1,6 @@
+<md-toolbar class="app-toolbar">
+  <div>
+    <md-icon (click)="clickSidebarIcon()" class="app-toolbar-icon"> menu </md-icon>
+  </div>
+  <span class="app-toolbar-icon" [routerLink]="['']">{{ getApplicationName() }}</span>
+</md-toolbar>

@@ -1,0 +1,12 @@
+<div *ngFor="let menuItem of getMenuItems()" class="app-menu-item-container">
+  <button md-button class="app-menu-button" [mdMenuTriggerFor]="menu">
+    <md-icon> {{ menuItem.getIcon() }} </md-icon> {{ menuItem.getTitle() }} </button>
+  <md-menu #menu="mdMenu">
+    <ng-container *ngFor="let menu of menuItem.getMenuItems()">
+      <button md-menu-item class="app-menu-icon-button" [routerLink]="[menu.getLink()]">
+          <md-icon> {{ menu.getIcon() }} </md-icon>
+          <span> {{ menu.getLabel() }} </span>
+      </button>
+    </ng-container>
+  </md-menu>
+</div>
