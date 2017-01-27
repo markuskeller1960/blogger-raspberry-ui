@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DropdownMenu } from '../common/menu/dropdown/model/dropdownMenuModel';
+import { DropdownMenu } from '../common/menu';
 import { MenuService } from '../service';
 
 @Component({

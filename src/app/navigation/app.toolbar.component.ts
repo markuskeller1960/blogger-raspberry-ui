@@ -7,7 +7,7 @@ import { UtilityService } from '../service';
   templateUrl: './html/app.toolbar.component.html',
   styleUrls: ['./styles/app.toolbar.component.scss'],
 })
-export class MainToolbarComponent {
+export class MainToolbarComponent implements OnInit {
 
   private appName = '';
 

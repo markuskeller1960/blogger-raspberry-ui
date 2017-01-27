@@ -11,7 +11,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 // commons
 import {
   DropdownMenuComponent
-} from './common/menu/dropdown';
+} from './common/menu';
+
+import {
+  ContentGridComponent
+} from './common/grid';
 
 // components
 import { WelcomeComponent } from './content/app.welcome.component';
@@ -58,6 +62,7 @@ import { AppComponent } from './root/app.component';
     DropdownMenuComponent,
     Router404Component,
     Router500Component,
+    ContentGridComponent,
     MainToolbarComponent,
     MainSidenavComponent,
     WelcomeComponent,
