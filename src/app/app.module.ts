@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-// angular material stuff
+// angular material
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -14,8 +14,8 @@ import {
 } from './common/menu';
 
 import {
-  ContentGridComponent
-} from './common/grid';
+  ContentHeaderCardComponent
+} from './common/card';
 
 // components
 import { WelcomeComponent } from './content/app.welcome.component';
@@ -62,7 +62,7 @@ import { AppComponent } from './root/app.component';
     DropdownMenuComponent,
     Router404Component,
     Router500Component,
-    ContentGridComponent,
+    ContentHeaderCardComponent,
     MainToolbarComponent,
     MainSidenavComponent,
     WelcomeComponent,
