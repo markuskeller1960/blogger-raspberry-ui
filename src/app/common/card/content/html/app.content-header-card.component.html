@@ -1,7 +1,7 @@
 <md-card class="flex-container app-content">
-  <md-card-header>
-    <img *ngIf="hasImage()" md-card-avatar src="{{ getImage() }}">
+  <md-card-title-group>
+    <img *ngIf="getImage()" md-card-sm-image src="{{ getImage() }}">
     <md-card-title>{{ getTitle() }}</md-card-title>
-    <md-card-subtitle *ngIf="hasSubTitle()">{{ getSubtitle() }}</md-card-subtitle>
-  </md-card-header>
+    <md-card-subtitle>{{ getSubtitle() }}</md-card-subtitle>
+  </md-card-title-group>
 </md-card>

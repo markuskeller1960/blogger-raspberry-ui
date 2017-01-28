@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UtilityService } from '../service';
 import { ContentCardHeaderModel } from '../common/card/content/model/ContentCardHeaderModel';
 
 @Component({
@@ -11,8 +12,11 @@ export class WelcomeComponent implements OnInit {
 
   private data: ContentCardHeaderModel;
 
+  constructor(private utilityService: UtilityService) {}
+
   ngOnInit(): void {
-    this.data = new ContentCardHeaderModel('Willkommen', 'Rapberry PI Blogger ist eine Anwendung für die Anzeige von Daten aus deinem Rasperry PI.', '/assets/images/content_header_welcome.png');
+    let subtiltle = this.utilityService.getApplicationName() + ' ist eine Anwendung für die Anzeige von Daten aus deinem Rasperry PI.';
+    this.data = new ContentCardHeaderModel('Willkommen', subtiltle, '/assets/images/content_header_welcome.png');
   }
 
   getHeaderData(): ContentCardHeaderModel {
