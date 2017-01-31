@@ -18,7 +18,7 @@ export class MenuService {
       .catch(this.onError);
   }
 
-  getItemObserver(): Observable<boolean> {
+  getIconObserver(): Observable<boolean> {
     return this.sidenavState.asObservable();
   }
 

@@ -11,16 +11,17 @@ import { UtilityService, MenuService } from '../service';
 export class MainToolbarComponent implements OnInit, OnDestroy {
 
   private appName = '';
-  private sidenavState: boolean;
-  subscription: Subscription;
+  private subscription: Subscription;
 
   @Output() onSideBarItemClicked: EventEmitter<any> = new EventEmitter();
 
-  constructor(private utilityService: UtilityService, private menuService: MenuService) {}
+  constructor(
+    private utilityService: UtilityService,
+    private menuService: MenuService) {}
 
   ngOnInit() {
     this.appName = this.utilityService.getApplicationName();
-    this.subscription = this.menuService.getItemObserver().subscribe(state => this.clickSidebarIcon());
+    this.subscription = this.menuService.getIconObserver().subscribe(state => this.clickSidebarIcon());
   }
 
   ngOnDestroy() {
