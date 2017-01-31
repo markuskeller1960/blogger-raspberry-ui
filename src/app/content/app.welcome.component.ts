@@ -15,7 +15,7 @@ export class WelcomeComponent implements OnInit {
   constructor(private utilityService: UtilityService) {}
 
   ngOnInit(): void {
-    let subtiltle = this.utilityService.getApplicationName() + ' ist eine Anwendung für die Anzeige von Daten aus deinem Rasperry PI.';
+    const subtiltle = this.utilityService.getApplicationName() + ' ist eine Anwendung für die Anzeige von Daten aus deinem Rasperry PI.';
     this.data = new ContentCardHeaderModel('Willkommen', subtiltle, '/assets/images/content_header_welcome.png');
   }
 

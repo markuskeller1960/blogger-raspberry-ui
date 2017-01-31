@@ -40,7 +40,8 @@ import {
 // navigation
 import {
   MainToolbarComponent,
-  MainSidenavComponent
+  MainSidenavComponent,
+  MainSidenavHeaderComponent
 } from './navigation';
 
 // router
@@ -65,6 +66,7 @@ import { AppComponent } from './root/app.component';
     ContentHeaderCardComponent,
     MainToolbarComponent,
     MainSidenavComponent,
+    MainSidenavHeaderComponent,
     WelcomeComponent,
     StatisticServerComponent,
     StatisticApplicationComponent,

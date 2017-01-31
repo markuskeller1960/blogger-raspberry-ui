@@ -1,0 +1,18 @@
+@import "../../../assets/style/global.scss";
+
+.app-sidenav-header {
+  height: 168px;
+  width: 300px;
+  margin-bottom: 20px;
+  background: $raspi-main-blue url(../../../assets/images/profile-header.png);
+  opacity: 0.2;
+  font-family: $raspi-font-family;
+  border-bottom: solid;
+}
+
+.app-sidenav-header-icon {
+  padding-right: 5px;
+  margin-left: auto;
+  font-size: 28px;
+  cursor: pointer;
+}

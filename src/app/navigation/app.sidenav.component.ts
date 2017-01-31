@@ -24,6 +24,10 @@ export class MainSidenavComponent implements OnInit {
     return this.menuItems;
   }
 
+  sidenavItemClicked() {
+    this.menuService.sidenavItemClicked();
+  }
+
   private loadingItemsError(error: any) {
     this.menuItems = [];
     console.log(error.message || error);
