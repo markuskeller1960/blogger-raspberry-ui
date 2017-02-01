@@ -21,7 +21,7 @@ export class MainToolbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.appName = this.utilityService.getApplicationName();
-    this.subscription = this.menuService.getIconObserver().subscribe(state => this.clickSidebarIcon());
+    this.subscription = this.menuService.getIconObserver().subscribe(() => this.clickSidebarIcon());
   }
 
   ngOnDestroy() {
