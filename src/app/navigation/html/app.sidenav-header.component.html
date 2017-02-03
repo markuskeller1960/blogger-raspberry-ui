@@ -1,14 +1,6 @@
-<div class="flex-container app-sidenav-header" fxFlex="100%" fxLayout="column" fxLayoutAlign="start stretch">
-  <div class="flex-item app-sidenav-header-icon" fxFlex="16%" fxLayoutAlign="center end">
-    <md-icon (click)="clickSidebarIcon()">close</md-icon>
-  </div>
-  <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">
-    <p>Your Raspberry</p>
-  </div>
-  <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">
-    <p>is running @</p>
-  </div>
-  <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">
-    <p>192.168.6.142</p>
-  </div>
+<div class="flex-container app-sidenav-header" fxLayout="column" fxLayoutAlign="start stretch">
+    <md-icon class="flex-item app-sidenav-header-icon" (click)="clickSidebarIcon()" fxLayoutAlign="start stretch">close</md-icon>
+    <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">Dein Raspberry</div>
+    <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">läuft auf Host</div>
+    <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">192.168.6.1</div>
 </div>

@@ -43,21 +43,21 @@ export class MenuService {
     menu.setId(index);
     switch ( index ) {
       case 'id-statistics':
-        menu.setTitle('Statistics', 'assessment');
-        menu.addItem(new DropdownMenuItem('Dashboard' , 'statistic-dashboard', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Application Statistics' , 'statistic-application', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Raspberry Statistics' , 'statistic-server', this.menuIcon));
+        menu.setTitle('Statistiken', 'assessment');
+        menu.addItem(new DropdownMenuItem('Übersicht' , 'statistic-dashboard', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Anwendungen' , 'statistic-application', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('System' , 'statistic-server', this.menuIcon));
         break;
       case 'id-settings':
-        menu.setTitle('Settings', 'settings');
-        menu.addItem(new DropdownMenuItem('List Settings' , 'settings-list', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Edit Setting' , 'settings-edit', this.menuIcon));
+        menu.setTitle('Einstellungen', 'settings');
+        menu.addItem(new DropdownMenuItem('Übersicht' , 'settings-list', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Einstellung ändern' , 'settings-edit', this.menuIcon));
         break;
       case 'id-help':
-        menu.setTitle('Help', 'help_outline');
-        menu.addItem(new DropdownMenuItem('Documentation' , 'help-documentation', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Error Handling' , 'help-exceptions', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Miscellaneous' , 'help-misc', this.menuIcon));
+        menu.setTitle('Hilfe', 'help_outline');
+        menu.addItem(new DropdownMenuItem('Dokumentation' , 'help-documentation', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Fehlerbehandlung' , 'help-exceptions', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Anwendungen' , 'help-misc', this.menuIcon));
         break;
     }
     return menu;

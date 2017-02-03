@@ -5,17 +5,17 @@
   width: 300px;
   margin-bottom: 20px;
   background: $raspi-main-blue url(../../../assets/images/profile-header.png);
-  opacity: 0.2;
+  opacity: 0.4;
   font-family: $raspi-font-family;
   border-bottom: solid;
     .text {
-       margin-right: 30px;
       font-size: smaller;
+      margin-right: 25px;
      }
 }
 
 .app-sidenav-header-icon {
-  padding-right: 5px;
+  margin-right: 10px;
   margin-left: auto;
   font-size: 28px;
   cursor: pointer;
