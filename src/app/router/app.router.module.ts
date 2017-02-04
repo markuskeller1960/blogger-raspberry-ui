@@ -5,9 +5,10 @@ import { Router404Component } from './app.router-404.component';
 import { Router500Component } from './app.router-500.component';
 import { WelcomeComponent } from '../content/app.welcome.component';
 
+import { ApplicationComponent } from '../content/application';
+
 import {
   StatisticDashboardComponent,
-  StatisticServerComponent,
   StatisticApplicationComponent
 } from '../content/statistic';
 
@@ -25,11 +26,12 @@ import {
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
 
+  { path: 'Anwendungen', component: ApplicationComponent},
+
   { path: 'settings-list', component: SettingsListComponent },
   { path: 'settings-edit', component: SettingsEditComponent },
 
   { path: 'statistic-dashboard', component: StatisticDashboardComponent },
-  { path: 'statistic-server', component: StatisticServerComponent },
   { path: 'statistic-application', component: StatisticApplicationComponent },
 
   { path: 'help-documentation', component: HelpDocumentationComponent },

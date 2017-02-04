@@ -31,6 +31,7 @@ export class MenuService {
     this.menuItems.push(this.createMenuItems('id-settings'));
     this.menuItems.push(this.createMenuItems('id-statistics'));
     this.menuItems.push(this.createMenuItems('id-help'));
+    this.menuItems.push(this.createMenuItems('id-application'));
     return this.menuItems;
   }
 
@@ -42,11 +43,15 @@ export class MenuService {
     const menu: DropdownMenu = new DropdownMenu();
     menu.setId(index);
     switch ( index ) {
-      case 'id-statistics':
-        menu.setTitle('Statistiken', 'assessment');
+      case 'id-application':
+        menu.setTitle('Anwendungen', 'assessment');
         menu.addItem(new DropdownMenuItem('Übersicht' , 'statistic-dashboard', this.menuIcon));
         menu.addItem(new DropdownMenuItem('Anwendungen' , 'statistic-application', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('System' , 'statistic-server', this.menuIcon));
+        break;
+      case 'id-statistics':
+        menu.setTitle('System', 'assessment');
+        menu.addItem(new DropdownMenuItem('Übersicht' , 'statistic-dashboard', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Anwendungen' , 'statistic-application', this.menuIcon));
         break;
       case 'id-settings':
         menu.setTitle('Einstellungen', 'settings');

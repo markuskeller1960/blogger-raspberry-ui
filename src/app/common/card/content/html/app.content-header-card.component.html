@@ -1,5 +1,5 @@
-<md-card class="flex-container app-content">
-  <md-card-title-group>
+<md-card class="flex-container app-content" fxLayout="column">
+  <md-card-title-group class="flex-item">
     <img *ngIf="getImage()" md-card-sm-image src="{{ getImage() }}">
     <md-card-title>{{ getTitle() }}</md-card-title>
     <md-card-subtitle>{{ getSubtitle() }}</md-card-subtitle>

@@ -21,7 +21,6 @@ import {
 import { WelcomeComponent } from './content/app.welcome.component';
 
 import {
-  StatisticServerComponent,
   StatisticApplicationComponent,
   StatisticDashboardComponent
 } from './content/statistic';
@@ -30,6 +29,10 @@ import {
   SettingsListComponent,
   SettingsEditComponent
 } from './content/settings';
+
+import {
+  ApplicationComponent
+} from './content/application';
 
 import {
   HelpDocumentationComponent,
@@ -68,7 +71,7 @@ import { AppComponent } from './root/app.component';
     MainSidenavComponent,
     MainSidenavHeaderComponent,
     WelcomeComponent,
-    StatisticServerComponent,
+    ApplicationComponent,
     StatisticApplicationComponent,
     StatisticDashboardComponent,
     SettingsListComponent,

@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-statistic',
-  templateUrl: './html/app.statistic-server.component.html',
-  styleUrls: ['./styles/app.statistic-server.component.scss']
+  selector: 'app-help-documentation',
+  templateUrl: './html/app.application.component.html',
+  styleUrls: ['./styles/app.application.component.scss']
 })
 
-export class StatisticServerComponent implements OnInit {
+export class ApplicationComponent implements OnInit {
 
   private titel = '';
   private text = '';
 
   ngOnInit(): void {
-    this.titel = 'Server Statistic';
+    this.titel = 'Documentation';
     this.text = 'Swisscom Object Orchestration Engine';
   }
 
@@ -24,3 +24,4 @@ export class StatisticServerComponent implements OnInit {
     return this.text;
   }
 }
+

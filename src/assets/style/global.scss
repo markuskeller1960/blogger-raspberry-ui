@@ -1,11 +1,24 @@
 
 // common
 $raspi-main-blue: #084C61;
-$raspi-main-red: #DB504A;
-$raspi-main-yellow: #E3B505;
 $raspi-main-grey: #4F6D7A;
-$raspi-main-green: #56A3A6;
+
+$raspi-light-orange: #FFD873;
+$raspi-medium-orange: #FFCA40;
+$raspi-dark-orange: #FFB800;
+
+$raspi-light-yellow: #FFEE73;
+$raspi-medium-yellow: #FFE840;
+$raspi-dark-yellow: #FFE100;
+
+$raspi-light-green: #ECFC71;
+$raspi-medium-green: #E6FC3F;
+$raspi-dark-green: #DCF900;
+
 $raspi-font-color-menu: #4F6D7A;
+$raspi-font-color-menu-dark: lightness(#4F6D7A);
+
 $raspi-font-family: Roboto,"Helvetica Neue", sans-serif;
+$raspi-font-size: 1em;
 
 

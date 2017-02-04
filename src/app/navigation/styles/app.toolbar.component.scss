@@ -1,12 +1,12 @@
 @import "../../../assets/style/global.scss";
 
 .app-toolbar {
-  background-color: $raspi-main-blue;
+  background-color: $raspi-medium-yellow;
 }
 
 .app-toolbar-icon {
   margin-right: 15px;
-  color: white;
+  color: $raspi-font-color-menu;
   font-size: 25px;
   cursor: pointer;
 }
