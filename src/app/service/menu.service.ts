@@ -28,10 +28,10 @@ export class MenuService {
 
   private createMenu(): Array<DropdownMenu>  {
     this.menuItems = [];
+    this.menuItems.push(this.createMenuItems('id-application'));
     this.menuItems.push(this.createMenuItems('id-settings'));
     this.menuItems.push(this.createMenuItems('id-statistics'));
     this.menuItems.push(this.createMenuItems('id-help'));
-    this.menuItems.push(this.createMenuItems('id-application'));
     return this.menuItems;
   }
 
@@ -45,8 +45,8 @@ export class MenuService {
     switch ( index ) {
       case 'id-application':
         menu.setTitle('Anwendungen', 'assessment');
-        menu.addItem(new DropdownMenuItem('Übersicht' , 'statistic-dashboard', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Anwendungen' , 'statistic-application', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Übersicht' , 'application-dashboard', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Anwendungen' , 'application-main', this.menuIcon));
         break;
       case 'id-statistics':
         menu.setTitle('System', 'assessment');

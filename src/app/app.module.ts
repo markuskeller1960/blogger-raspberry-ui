@@ -31,7 +31,8 @@ import {
 } from './content/settings';
 
 import {
-  ApplicationComponent
+  ApplicationComponent,
+  ApplicationDashboardComponent
 } from './content/application';
 
 import {
@@ -72,6 +73,7 @@ import { AppComponent } from './root/app.component';
     MainSidenavHeaderComponent,
     WelcomeComponent,
     ApplicationComponent,
+    ApplicationDashboardComponent,
     StatisticApplicationComponent,
     StatisticDashboardComponent,
     SettingsListComponent,

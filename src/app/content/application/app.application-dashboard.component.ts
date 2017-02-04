@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-application',
-  templateUrl: './html/app.application.component.html',
-  styleUrls: ['./styles/app.application.component.scss']
+  selector: 'app-application-dashboard',
+  templateUrl: './html/app.application-dashboard.component.html',
+  styleUrls: ['./styles/app.application-dashboard.component.scss']
 })
 
-export class ApplicationComponent implements OnInit {
+export class ApplicationDashboardComponent implements OnInit {
 
   private titel = '';
   private text = '';
@@ -24,4 +24,3 @@ export class ApplicationComponent implements OnInit {
     return this.text;
   }
 }
-
