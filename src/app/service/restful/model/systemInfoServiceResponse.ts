@@ -13,8 +13,9 @@ export class SystemInfoServiceResponse {
     this.code = data.code;
     this.developerMessage = data.developerMessage;
     console.log('Value : ' + this.developerMessage);
-  }
 
+    this.info = new SystemInfoModel()
+  }
 
   getSuccess(): boolean {
     return this.success;
