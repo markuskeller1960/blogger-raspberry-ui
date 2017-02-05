@@ -1,26 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Subscription} from 'rxjs/Subscription';
 
-import { UtilityService } from '../service';
-import { ContentCardHeaderModel } from '../common/card/content/model/ContentCardHeaderModel';
+import { SystemService } from '../service';
+import { SystemInfoModel } from '../common/model/systemInfoModel';
 
 @Component({
   selector: 'app-content',
   templateUrl: './app.welcome.component.html',
   styleUrls: ['./app.welcome.component.scss']
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent implements OnInit, OnDestroy {
 
-  private data: ContentCardHeaderModel;
+  private subscription: Subscription;
+  private systemInfo: SystemInfoModel;
 
-  constructor(private utilityService: UtilityService) {}
+  constructor(private systemService: SystemService) {}
 
   ngOnInit(): void {
-    const subtiltle = this.utilityService.getApplicationName() + ' ist eine Anwendung für die Anzeige von Daten aus deinem Rasperry PI.';
-    this.data = new ContentCardHeaderModel('Willkommen', subtiltle, '/assets/images/content_header_welcome.png');
+    this.subscription = this.systemService.getPollingSystemInfo().subscribe(() => this.systemInfo);
   }
 
-  getHeaderData(): ContentCardHeaderModel {
-    return this.data;
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  private handleError() {
+    console.log('Error while reading system data');
   }
 }
 

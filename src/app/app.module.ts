@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 // angular material
 import { MaterialModule } from '@angular/material';
@@ -57,7 +57,9 @@ import {
 // services (singleton)
 import {
   MenuService,
-  UtilityService } from './service';
+  UtilityService,
+  SystemService
+} from './service';
 
 import { AppComponent } from './root/app.component';
 
@@ -86,13 +88,15 @@ import { AppComponent } from './root/app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    JsonpModule,
     MaterialModule.forRoot(),
     FlexLayoutModule.forRoot(),
     AppRouterModule
   ],
   providers: [
     MenuService,
-    UtilityService
+    UtilityService,
+    SystemService
   ],
   bootstrap: [AppComponent]
 })
