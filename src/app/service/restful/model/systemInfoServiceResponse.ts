@@ -14,7 +14,7 @@ export class SystemInfoServiceResponse {
     this.developerMessage = data.developerMessage;
     console.log('Value : ' + this.developerMessage);
     this.info = new SystemInfoModel();
-    if(data.data) {
+    if (this.success) {
 
     }
   }
