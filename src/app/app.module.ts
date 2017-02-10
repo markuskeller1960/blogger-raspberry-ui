@@ -13,12 +13,11 @@ import {
   DropdownMenuComponent
 } from './common/menu';
 
-import {
-  ContentHeaderCardComponent
-} from './common/card';
-
 // components
-import { WelcomeComponent } from './content/app.welcome.component';
+import {
+  WelcomeComponent,
+  WelcomeHeaderComponent
+} from './content/welcome';
 
 import {
   StatisticApplicationComponent,
@@ -40,6 +39,11 @@ import {
   HelpExceptionsComponent,
   HelpMiscComponent
 } from './content/help';
+
+// directives
+import {
+  CollapsibleDirective
+} from './directive';
 
 // navigation
 import {
@@ -69,11 +73,11 @@ import { AppComponent } from './root/app.component';
     DropdownMenuComponent,
     Router404Component,
     Router500Component,
-    ContentHeaderCardComponent,
     MainToolbarComponent,
     MainSidenavComponent,
     MainSidenavHeaderComponent,
     WelcomeComponent,
+    WelcomeHeaderComponent,
     ApplicationComponent,
     ApplicationDashboardComponent,
     StatisticApplicationComponent,
@@ -82,7 +86,8 @@ import { AppComponent } from './root/app.component';
     SettingsEditComponent,
     HelpDocumentationComponent,
     HelpExceptionsComponent,
-    HelpMiscComponent
+    HelpMiscComponent,
+    CollapsibleDirective
   ],
   imports: [
     BrowserModule,

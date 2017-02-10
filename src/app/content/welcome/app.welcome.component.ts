@@ -1,14 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 
-import { SystemService } from '../service';
-import { SystemInfoModel } from '../common/model/systemInfoModel';
+import { SystemService } from '../../service';
+import { SystemInfoModel } from '../../common/model/systemInfoModel';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './app.welcome.component.html',
-  styleUrls: ['./app.welcome.component.scss']
+  selector: 'app-welcome',
+  templateUrl: 'html/app.welcome.component.html',
+  styleUrls: ['styles/app.welcome.component.scss']
 })
+
 export class WelcomeComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;

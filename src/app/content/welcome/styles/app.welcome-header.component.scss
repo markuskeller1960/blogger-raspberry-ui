@@ -1,0 +1,13 @@
+@import "../../../../assets/style/global";
+
+.app-simple-card {
+  color: $raspi-main-blue;
+  margin: 10px;
+  padding: 5px;
+}
+
+.app-simple-card-header-icon {
+  color: $raspi-main-grey;
+  font-size: 28px;
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+<md-card class="flex-container app-simple-card" fxLayout="column">
+  <md-card-title class="flex-item">
+    <div class="flex-container" fxLayout="row" fxFill>
+      <span class="flex-item" fxLayoutAlign="start start" fxFlex="33%">Welcome</span>
+      <span class="flex-item" fxLayoutAlign="center center" fxFlex="33%">Raspberry PI Blogger</span>
+      <span class="flex-item" fxLayoutAlign="end start" fxFlex>
+        <md-icon class="app-simple-card-header-icon" (click)="toggleCardBody()">{{ cardBodyIcon }}</md-icon>
+      </span>
+    </div>
+  </md-card-title>
+  <md-card-content class="flex-item" *appCollapsible="isCardBodyVisible">
+    <p>content</p>
+  </md-card-content>
+</md-card>

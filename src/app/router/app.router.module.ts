@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { Router404Component } from './app.router-404.component';
 import { Router500Component } from './app.router-500.component';
-import { WelcomeComponent } from '../content/app.welcome.component';
+import { WelcomeComponent } from '../content/welcome/app.welcome.component';
 
 import {
   ApplicationComponent,
