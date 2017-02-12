@@ -12,7 +12,6 @@ export class SystemInfoServiceResponse {
     this.success = data.success;
     this.code = data.code;
     this.developerMessage = data.developerMessage;
-    console.log('Value : ' + this.developerMessage);
     this.info = new SystemInfoModel();
     if (data.data) {
       const values = data.data;
@@ -25,6 +24,15 @@ export class SystemInfoServiceResponse {
       this.info.setTotalRAM(values.totalRAM);
       this.info.setUsedRAM(values.usedRAM);
       this.info.setFreeRAM(values.freeRAM);
+      this.info.setDate(new Date(
+        values.date.year,
+        values.date.monthValue,
+        values.date.dayOfMonth,
+        values.date.hour,
+        values.date.minute,
+        values.date.second
+      ));
+
     }
   }
 
