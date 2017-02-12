@@ -9,6 +9,15 @@ export class SystemInfoModel {
   private totalRAM: number;
   private usedRAM: number;
   private freeRAM: number;
+  private date: Date;
+
+  getDate(): Date {
+    return this.date;
+  }
+
+  setDate(date: Date) {
+    this.date = date;
+  }
 
   getTransactionInfo(): string {
     return this.transactionInfo;
