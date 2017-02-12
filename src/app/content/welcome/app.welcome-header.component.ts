@@ -12,7 +12,7 @@ export class WelcomeHeaderComponent {
   private ico_open = 'expand_more';
 
   isCardBodyVisible = true;
-  cardBodyIcon = 'ico_open';
+  cardBodyIcon = this.ico_open;
 
   toggleCardBody() {
     this.isCardBodyVisible = !this.isCardBodyVisible;
