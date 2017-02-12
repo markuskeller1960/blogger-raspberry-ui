@@ -15,7 +15,16 @@ export class SystemInfoServiceResponse {
     console.log('Value : ' + this.developerMessage);
     this.info = new SystemInfoModel();
     if (data.data) {
-
+      const values = data.data;
+      this.info.setTransactionInfo(values.transactionInfo);
+      this.info.setCpuTemperature(values.cpuTemperature);
+      this.info.setTotalDiskSpace(values.totalDiskSpace);
+      this.info.setUsedDiskSpace(values.usedDiskSpace);
+      this.info.setFreeDiskSpace(values.freeDiskSpace);
+      this.info.setUsedDiskSpacePercentage(values.usedDiskSpacePercentage);
+      this.info.setTotalRAM(values.totalRAM);
+      this.info.setUsedRAM(values.usedRAM);
+      this.info.setFreeRAM(values.freeRAM);
     }
   }
 

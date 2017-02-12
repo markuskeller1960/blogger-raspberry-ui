@@ -2,15 +2,17 @@
   <md-card-title class="flex-item">
     <div class="flex-container" fxLayout="row" fxFill>
       <span class="flex-item" fxLayoutAlign="start center" fxFlex="33%">
-        <img md-card-avatar src="../../../../assets/images/lemon_small_01.png"> Startseite
+        <img md-card-avatar src="../../../../assets/images/lemon_small_01.png">Willkommen
       </span>
-      <span class="flex-item" fxLayoutAlign="center center" fxFlex="33%">Raspberry PI Blogger</span>
+      <span class="flex-item" fxLayoutAlign="center center" fxFlex="33%">Lemon</span>
       <span class="flex-item" fxLayoutAlign="end start" fxFlex="33%">
         <md-icon class="app-simple-card-header-icon" (click)="toggleCardBody()">{{ cardBodyIcon }}</md-icon>
       </span>
     </div>
   </md-card-title>
+  <md-card-subtitle>Lemon ist eine Website für dein Raspberry PI</md-card-subtitle>
   <md-card-content class="flex-item" *appCollapsible="isCardBodyVisible">
-    <p>content</p>
+    <h1>Lemon</h1>
+    <p>Wenn du diese Nachricht siehst, ist dein Raspberry in beteib und mit Lemon verbunden.</p>
   </md-card-content>
 </md-card>
