@@ -62,7 +62,9 @@ import {
 import {
   MenuService,
   UtilityService,
-  SystemService
+  SystemService,
+  DeviceService,
+  LocalStorageService
 } from './service';
 
 import { AppComponent } from './root/app.component';
@@ -101,7 +103,9 @@ import { AppComponent } from './root/app.component';
   providers: [
     MenuService,
     UtilityService,
-    SystemService
+    SystemService,
+    DeviceService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
