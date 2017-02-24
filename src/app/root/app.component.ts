@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import {DeviceService} from '../service/device.service';
-import {LocalStorageService} from '../service/localStorage.service';
-
-
 
 @Component({
   selector: 'app-root',
@@ -15,10 +12,11 @@ export class AppComponent implements OnInit {
 
   private device = false;
 
-  constructor(private deviceService: DeviceService, private storageService: LocalStorageService) {}
+  constructor(private deviceService: DeviceService) {}
 
   ngOnInit(): void {
-    console.log('XXXXXXXXXXXXXXXXXXXXX :: ' + this.storageService.hasBrowserSupport());
+    this.device = this.deviceService.hasDefaultDevice();
+    console.log('Default Device ' + this.device);
   }
 
   hasDevice(): boolean {
