@@ -8,4 +8,15 @@ import { Component } from '@angular/core';
 
 export class DeviceSelectionComponent {
 
+  private title = 'Raspberry Blogger';
+  private subtitle = 'Bitte wähle das Raspberry Pi, mit dem du dich verbinden willst';
+
+
+  getTitle(): string {
+    return this.title;
+  }
+
+  getSubtitle(): string {
+    return this.subtitle;
+  }
 }

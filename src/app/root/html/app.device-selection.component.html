@@ -1,3 +1,7 @@
-<div class="flex-container app-device-selection" fxLayout="column" fxFill>
-
+<div class="flex-container" fxLayout="column" fxFill fxLayoutAlign="center center">
+  <div class="flex-item app-device-selection-card">
+    <app-simple-card [cardTitle]="getTitle()" [cardSubtitle]="getSubtitle()" [isOpen]="true">
+      <p>That will be the content !!!!!</p>
+    </app-simple-card>
+  </div>
 </div>

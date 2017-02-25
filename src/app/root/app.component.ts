@@ -10,13 +10,12 @@ import {DeviceService} from '../service/device.service';
 
 export class AppComponent implements OnInit {
 
-  private device = false;
+  private device = true;
 
   constructor(private deviceService: DeviceService) {}
 
   ngOnInit(): void {
     this.device = this.deviceService.hasDefaultDevice();
-    console.log('Default Device ' + this.device);
   }
 
   hasDevice(): boolean {
