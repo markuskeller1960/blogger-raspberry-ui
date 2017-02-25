@@ -42,7 +42,7 @@ import {
 
 // directives
 import {
-  CollapsibleDirective
+  VisibilityDirective
 } from './directive';
 
 // navigation
@@ -67,11 +67,15 @@ import {
   LocalStorageService
 } from './service';
 
-import { AppComponent } from './root/app.component';
+import {
+  AppComponent,
+  DeviceSelectionComponent
+} from './root';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DeviceSelectionComponent,
     DropdownMenuComponent,
     Router404Component,
     Router500Component,
@@ -89,7 +93,7 @@ import { AppComponent } from './root/app.component';
     HelpDocumentationComponent,
     HelpExceptionsComponent,
     HelpMiscComponent,
-    CollapsibleDirective
+    VisibilityDirective
   ],
   imports: [
     BrowserModule,

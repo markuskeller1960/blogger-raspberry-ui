@@ -1,1 +1,1 @@
-export { CollapsibleDirective } from './app.collapsible.directive';
+export { VisibilityDirective } from './app.visibility.directive';

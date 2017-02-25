@@ -4,17 +4,17 @@ import { TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive (
   {
-    selector: '[appCollapsible]'
+    selector: '[appVisibility]'
   }
 )
 
-export class CollapsibleDirective {
+export class VisibilityDirective {
 
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef) { }
 
-  @Input() set appCollapsible(visible: boolean) {
+  @Input() set appVisibility(visible: boolean) {
     if (!visible) {
       this.viewContainer.clear();
     } else {
