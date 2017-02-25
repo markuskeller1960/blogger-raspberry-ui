@@ -11,7 +11,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 // commons
 import {
   DropdownMenuComponent,
-  SimpleCardComponent
+  SimpleCardComponent,
+  DeviceIndexComponent,
+  DeviceIndexItemComponent,
+  AddDeviceIndexComponent
 } from './common';
 
 // components
@@ -79,6 +82,9 @@ import {
     DeviceSelectionComponent,
     DropdownMenuComponent,
     SimpleCardComponent,
+    DeviceIndexComponent,
+    DeviceIndexItemComponent,
+    AddDeviceIndexComponent,
     Router404Component,
     Router500Component,
     MainToolbarComponent,

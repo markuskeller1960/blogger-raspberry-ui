@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import {UtilityService} from '../service';
+
 @Component({
   selector: 'app-device-selection',
   templateUrl: './html/app.device-selection.component.html',
@@ -8,9 +10,12 @@ import { Component } from '@angular/core';
 
 export class DeviceSelectionComponent {
 
-  private title = 'Raspberry Blogger';
-  private subtitle = 'Bitte wähle das Raspberry Pi, mit dem du dich verbinden willst';
+  private title = '';
+  private subtitle = 'Bitte wähle das Raspberry PI, mit dem du dich verbinden willst:';
 
+  constructor(private utilityService: UtilityService) {
+      this.title = utilityService.getApplicationName();
+  }
 
   getTitle(): string {
     return this.title;
