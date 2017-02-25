@@ -1,5 +1,5 @@
 <md-card class="flex-container app-simple-card" fxLayout="column">
-  <md-card-title class="flex-item" *ngIf="hasTitle()">
+  <md-card-title class="flex-item app-simple-card-header" *ngIf="hasTitle()">
     <div class="flex-container" fxLayout="row" fxFill>
       <span class="flex-item" fxLayoutAlign="start start" fxFlex="90%">{{ getTitle() }}</span>
       <span class="flex-item" fxLayoutAlign="end start" fxFlex>
@@ -7,14 +7,14 @@
       </span>
     </div>
   </md-card-title>
-  <md-card-title class="flex-item" *ngIf="!hasTitle()">
+  <md-card-title class="flex-item app-simple-card-header" *ngIf="!hasTitle()">
     <div class="flex-container" fxLayout="row" fxFill>
       <span class="flex-item" fxLayoutAlign="end start" fxFlex>
         <md-icon class="app-simple-card-header-icon" (click)="toggle()">{{ toggleIcon }}</md-icon>
       </span>
     </div>
   </md-card-title>
-  <md-card-subtitle *ngIf="hasSubtitle()">{{ getSubtitle() }}</md-card-subtitle>
+  <md-card-subtitle class="app-simple-card-subtitle" *ngIf="hasSubtitle()">{{ getSubtitle() }}</md-card-subtitle>
   <md-card-content class="flex-item" *appVisibility="showContent">
     <ng-content></ng-content>
   </md-card-content>
