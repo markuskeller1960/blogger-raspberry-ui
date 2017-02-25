@@ -1,1 +1,22 @@
-NEW !!!!!!!!!!!
+<form class="flex-container" fxLayout="column" fxFill>
+  <h2>Raspberry hinzufügen</h2>
+  <div class="flex-item app-add-device-index" fxLayout="column" fxLayoutAlign="start stretch">
+    <label for="name">Name:</label>
+    <input type="text" class="" id="name">
+  </div>
+  <div div class="flex-item app-add-device-index" fxLayout="row" fxLayoutAlign="start stretch">
+    <div class="flex-item app-add-device-index" fxLayout="column" fxFlex="80%" fxLayoutAlign="start stretch">
+      <label for="ip">IP-Addresse:</label>
+      <input type="text" class="" id="ip">
+    </div>
+    <div class="flex-item app-add-device-index" fxLayout="column" fxFlex="20%" fxLayoutAlign="start stretch">
+      <label for="port" [ngStyle]="{'margin-left.px': 10}">Port:</label>
+      <input [ngStyle]="{'margin-left.px': 10}" type="text" id="port">
+    </div>
+  </div>
+  <div class="flex-item app-add-device-index" fxLayout="row" fxLayoutAlign="start stretch">
+    <button md-raised-button (click)="cancel()">Abbrechen</button>
+    <button [ngStyle]="{'margin-left.px': 10}" md-raised-button (click)="cancel()">Test</button>
+    <button [ngStyle]="{'margin-left.px': 10}" md-raised-button (click)="cancel()">Weiter</button>
+  </div>
+</form>

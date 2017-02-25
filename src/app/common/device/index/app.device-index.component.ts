@@ -25,6 +25,10 @@ export class DeviceIndexComponent {
   }
 
   addDevice() {
-    this.showNewForm = !this.showNewForm;
+    this.showNewForm = true;
+  }
+
+  cancelNewDevice() {
+    this.showNewForm = false;
   }
 }
