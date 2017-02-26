@@ -8,3 +8,5 @@ export { DeviceIndexComponent } from './device/index/app.device-index.component'
 export { DeviceIndexItemComponent } from './device/index/app.device-index-item.component';
 export { AddDeviceIndexComponent } from './device/index/app.add-device-index.component';
 export { DeviceIndexModel } from './model/deviceIndexModel';
+
+export { SystemInfoModel } from './model/systemInfoModel';

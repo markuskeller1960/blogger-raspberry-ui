@@ -6,6 +6,10 @@ import { Router500Component } from './app.router-500.component';
 import { WelcomeComponent } from '../content/welcome/app.welcome.component';
 
 import {
+  DeviceSelectionComponent
+} from '../root/app.device-selection.component';
+
+import {
   ApplicationComponent,
   ApplicationDashboardComponent
 } from '../content/application';
@@ -27,6 +31,8 @@ import {
 } from '../content/help';
 
 const appRoutes: Routes = [
+  { path: 'start', component: DeviceSelectionComponent },
+
   { path: 'welcome', component: WelcomeComponent },
 
   { path: 'application-main', component: ApplicationComponent},
@@ -42,7 +48,7 @@ const appRoutes: Routes = [
   { path: 'help-exceptions', component: HelpExceptionsComponent },
   { path: 'help-misc', component: HelpMiscComponent },
 
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: '', redirectTo: '/start', pathMatch: 'full' },
   { path: 'error-500', component: Router500Component },
   { path: '**', component: Router404Component }
 ];

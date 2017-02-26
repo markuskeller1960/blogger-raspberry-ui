@@ -1,4 +1,4 @@
-<ng-container *ngIf="hasDevice()">
+<ng-container *ngIf="isConnected()">
 <md-sidenav-container class="flex-container" fxLayout="column" fxFill>
   <md-sidenav #sidenav mode="side" class="app-sidenav flex-item" fxLayout="column">
     <app-main-sidenav></app-main-sidenav>
@@ -10,6 +10,6 @@
 </md-sidenav-container>
 </ng-container>
 
-<ng-container *ngIf="!hasDevice()">
-  <app-device-selection></app-device-selection>
+<ng-container *ngIf="!isConnected()">
+  <router-outlet></router-outlet>
 </ng-container>

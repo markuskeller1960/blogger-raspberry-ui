@@ -41,7 +41,7 @@ export class DeviceService {
   findDevice(ipAddress: string, port: string): DeviceIndexModel {
     let found = null;
     for (let device of this.deviceIndex) {
-      if (device.getIPAddress() === ipAddress && device.getPort() === port) {
+      if (device.ipAddress === ipAddress && device.port === port) {
         found = device;
       }
     }
@@ -65,7 +65,7 @@ export class DeviceService {
     let found = -1;
     for (let i = 0; i <  this.deviceIndex.length; i++) {
       let device = this.deviceIndex[i];
-      if (device.getIPAddress() === searchDevice.getIPAddress() && device.getPort() === searchDevice.getPort()) {
+      if (device.ipAddress === searchDevice.ipAddress && device.port === searchDevice.port) {
         found = i;
         break;
       }
@@ -74,7 +74,7 @@ export class DeviceService {
   }
 
   private isDefault(value: DeviceIndexModel) {
-    return value.isActive();
+    return value.active;
   }
 
   private storeItem() {

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Rx';
 
 import { UtilityService } from '../';
 import { SystemInfoServiceResponse } from './';
-import { SystemInfoModel } from '../../common/model/systemInfoModel';
+import { SystemInfoModel, DeviceIndexModel } from '../../common/';
 
 @Injectable()
 export class SystemService {
@@ -17,6 +17,10 @@ export class SystemService {
 
   getStoredSysteminfo(): SystemInfoModel {
     return this.sysinfo;
+  }
+
+  testConnection(device: DeviceIndexModel): Observable<SystemInfoModel> {
+    return this.getSystemInfo();
   }
 
   getRealTimeSystemInfo(): Observable<SystemInfoModel> {

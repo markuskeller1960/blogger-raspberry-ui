@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     this.device = this.deviceService.hasDefaultDevice();
   }
 
-  hasDevice(): boolean {
+  isConnected(): boolean {
     return this.device;
   }
 }
