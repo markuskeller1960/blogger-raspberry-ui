@@ -1,4 +1,4 @@
-import { SystemInfoModel } from '../../../common/model/systemInfoModel';
+import { SystemInfoModel } from '../../../common/model/system-info.model';
 
 export class SystemInfoServiceResponse {
 

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import {DropdownMenu} from './model/dropdownMenuModel';
+import {DropdownMenu} from './model/dropdown-menu.model';
 
 @Component({
   selector: 'app-dropdown-menu',

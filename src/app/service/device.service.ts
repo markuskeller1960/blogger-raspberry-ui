@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import {DeviceIndexModel} from '../common/model/deviceIndexModel';
-import {LocalStorageService} from './localStorage.service';
+import {DeviceIndexModel} from '../common/model/device-index.model';
+import {LocalStorageService} from './local-storage.service';
 
 @Injectable()
 export class DeviceService {

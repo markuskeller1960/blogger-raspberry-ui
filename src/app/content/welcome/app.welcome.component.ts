@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 
 import { SystemService } from '../../service';
-import { SystemInfoModel } from '../../common/model/systemInfoModel';
+import { SystemInfoModel } from '../../common/model/system-info.model';
 
 @Component({
   selector: 'app-welcome',

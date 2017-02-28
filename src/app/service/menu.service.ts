@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 
-import { DropdownMenu } from '../common/menu/dropdown/model/dropdownMenuModel';
-import { DropdownMenuItem } from '../common/menu/dropdown/model/dropdownMenuItemModel';
+import { DropdownMenu } from '../common/menu/dropdown/model/dropdown-menu.model';
+import { DropdownMenuItem } from '../common/menu/dropdown/model/dropdown-menu-item.model';
 
 @Injectable()
 export class MenuService {

@@ -1,4 +1,4 @@
-import {DropdownMenuItem} from './dropdownMenuItemModel';
+import {DropdownMenuItem} from './dropdown-menu-item.model';
 
 export class DropdownMenu {
 

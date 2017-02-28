@@ -13,9 +13,9 @@ export class AddDeviceIndexComponent implements OnInit {
 
   public device: DeviceIndexModel;
 
-  constructor(private deviceService: DeviceService, private systemService: SystemService) {}
-
   @Output() onCancelButtonClicked: EventEmitter<any> = new EventEmitter();
+
+  constructor(private deviceService: DeviceService, private systemService: SystemService) {}
 
   ngOnInit(): void {
     this.device = new DeviceIndexModel('Mein Raspberry PI', '127.0.0.1', '8080', false);

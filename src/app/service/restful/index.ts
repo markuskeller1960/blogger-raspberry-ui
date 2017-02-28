@@ -1,1 +1,1 @@
-export { SystemInfoServiceResponse } from './model/systemInfoServiceResponse';
+export { SystemInfoServiceResponse } from './model/system-info-service-response';
