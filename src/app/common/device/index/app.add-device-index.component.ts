@@ -30,5 +30,6 @@ export class AddDeviceIndexComponent implements OnInit {
     console.log('name :: ' + this.device.name);
     console.log('ip :: ' + this.device.ipAddress);
     console.log('port :: ' + this.device.port);
+    this.systemService.testConnection(this.device);
   }
 }

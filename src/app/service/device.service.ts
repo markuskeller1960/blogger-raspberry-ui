@@ -40,7 +40,7 @@ export class DeviceService {
 
   findDevice(ipAddress: string, port: string): DeviceIndexModel {
     let found = null;
-    for (let device of this.deviceIndex) {
+    for (const device of this.deviceIndex) {
       if (device.ipAddress === ipAddress && device.port === port) {
         found = device;
       }
@@ -53,7 +53,7 @@ export class DeviceService {
   }
 
   private addDevice(device: DeviceIndexModel) {
-    let index = this.isInList(device);
+    const index = this.isInList(device);
     if (index > 0) {
       this.deviceIndex.splice(index, 1);
     }
@@ -64,7 +64,7 @@ export class DeviceService {
   private isInList(searchDevice: DeviceIndexModel): number {
     let found = -1;
     for (let i = 0; i <  this.deviceIndex.length; i++) {
-      let device = this.deviceIndex[i];
+      const device = this.deviceIndex[i];
       if (device.ipAddress === searchDevice.ipAddress && device.port === searchDevice.port) {
         found = i;
         break;
