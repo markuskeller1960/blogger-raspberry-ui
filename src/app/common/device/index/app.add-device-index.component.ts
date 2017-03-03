@@ -11,14 +11,28 @@ import { DeviceService, SystemService } from '../../../service';
 
 export class AddDeviceIndexComponent implements OnInit {
 
-  public device: DeviceIndexModel;
+  btnCancel: string;
+  btnTest: string;
+  btnConnect: string;
+  lblIP: string;
+  lblPort: string;
+  lblName: string;
+  formTitle: string;
+  device: DeviceIndexModel;
 
   @Output() onCancelButtonClicked: EventEmitter<any> = new EventEmitter();
 
   constructor(private deviceService: DeviceService, private systemService: SystemService) {}
 
   ngOnInit(): void {
+    this.formTitle = 'Raspberry hinzufügen';
     this.device = new DeviceIndexModel('Mein Raspberry PI', '127.0.0.1', '8080', false);
+    this.btnConnect = 'Verbinden';
+    this.btnCancel = 'Abbrechen';
+    this.btnTest = 'Verbindung testen';
+    this.lblIP = 'IP-Adresse';
+    this.lblPort = 'Port';
+    this.lblName = 'Name';
   }
 
   cancel() {
@@ -27,9 +41,6 @@ export class AddDeviceIndexComponent implements OnInit {
   }
 
   test() {
-    console.log('name :: ' + this.device.name);
-    console.log('ip :: ' + this.device.ipAddress);
-    console.log('port :: ' + this.device.port);
     this.systemService.testConnection(this.device);
   }
 }

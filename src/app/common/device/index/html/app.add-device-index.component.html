@@ -1,21 +1,21 @@
 <div class="flex-container app-device-index-add" fxLayout="column" fxFill>
-  <h2>Raspberry hinzufügen</h2>
+  <h2>{{ formTitle }}</h2>
   <div class="flex-item app-add-device-index" fxLayout="column" fxLayoutAlign="start stretch">
-    <label for="name">Name:</label>
+    <label for="name">{{ lblName }}:</label>
     <input type="text" id="name" [(ngModel)]="device.name">
   </div>
   <div div class="flex-item app-add-device-index" fxLayout="row" fxLayoutAlign="start stretch">
     <div class="flex-item app-add-device-index" fxLayout="column" fxFlex="80%" fxLayoutAlign="start stretch">
-      <label for="ip">IP-Addresse:</label>
+      <label for="ip">{{ lblIP }}:</label>
       <input type="text" id="ip" [(ngModel)]="device.ipAddress">
     </div>
     <div class="flex-item app-add-device-index" fxLayout="column" fxFlex="20%" fxLayoutAlign="start stretch">
-      <label for="port" [ngStyle]="{'margin-left.px': 10}">Port:</label>
+      <label for="port" [ngStyle]="{'margin-left.px': 10}">{{ lblPort }}:</label>
       <input [ngStyle]="{'margin-left.px': 10}" type="text" id="port" [(ngModel)]="device.port">
     </div>
   </div>
   <div class="flex-item app-add-device-index" fxLayout="row" fxLayoutAlign="start stretch">
-    <button md-raised-button (click)="cancel()">Abbrechen</button>
-    <button [ngStyle]="{'margin-left.px': 10}" md-raised-button (click)="test()">Verbindung testen</button>
+    <button md-raised-button (click)="cancel()">{{ btnCancel }}</button>
+    <button [ngStyle]="{'margin-left.px': 10}" md-raised-button (click)="test()">{{ btnTest }}</button>
   </div>
 </div>
