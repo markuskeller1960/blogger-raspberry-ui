@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {UtilityService} from '../service';
 
@@ -8,13 +8,16 @@ import {UtilityService} from '../service';
   styleUrls: ['./styles/app.device-selection.component.scss']
 })
 
-export class DeviceSelectionComponent {
+export class DeviceSelectionComponent implements OnInit {
 
-  private title = '';
-  private subtitle = 'Bitte wähle das Raspberry PI, mit dem du dich verbinden willst:';
+  private title: string;
+  private subtitle: string;
 
-  constructor(private utilityService: UtilityService) {
-      this.title = utilityService.getApplicationName();
+  constructor(private utilityService: UtilityService) {}
+
+  ngOnInit() {
+    this.title = this.utilityService.getApplicationName();
+    this.subtitle  = 'Bitte wähle das Raspberry PI, mit dem du dich verbinden willst:';
   }
 
   getTitle(): string {
