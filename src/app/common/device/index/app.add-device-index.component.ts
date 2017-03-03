@@ -11,22 +11,28 @@ import { DeviceService, SystemService } from '../../../service';
 
 export class AddDeviceIndexComponent implements OnInit {
 
+  formTitle: string;
   btnCancel: string;
   btnTest: string;
   btnConnect: string;
   lblIP: string;
   lblPort: string;
   lblName: string;
-  formTitle: string;
+
+  testing = false;
+
   device: DeviceIndexModel;
 
   @Output() onCancelButtonClicked: EventEmitter<any> = new EventEmitter();
 
-  constructor(private deviceService: DeviceService, private systemService: SystemService) {}
+  constructor(
+    private deviceService: DeviceService,
+    private systemService: SystemService
+  ) {}
 
   ngOnInit(): void {
     this.formTitle = 'Raspberry hinzufügen';
-    this.device = new DeviceIndexModel('Mein Raspberry PI', '127.0.0.1', '8080', false);
+    this.device = new DeviceIndexModel('Mein Raspberry PI', '192.168.6.143', '8080', false);
     this.btnConnect = 'Verbinden';
     this.btnCancel = 'Abbrechen';
     this.btnTest = 'Verbindung testen';
@@ -36,11 +42,23 @@ export class AddDeviceIndexComponent implements OnInit {
   }
 
   cancel() {
-    this.device = new DeviceIndexModel('Mein Raspberry PI', '127.0.0.1', '8080', false);
+    this.device = new DeviceIndexModel('Mein Raspberry PI', '192.168.6.143', '8080', false);
     this.onCancelButtonClicked.emit();
   }
 
   test() {
-    this.systemService.testConnection(this.device);
+    this.testing = true;
+    this.systemService.testConnection(this.device).subscribe( () => this.deviceTestSuccess(), e => this.deviceTestError(e) );
+  }
+
+  private deviceTestSuccess() {
+    console.log('deviceTestSuccess');
+    this.testing = false;
+  }
+
+  private deviceTestError(error: any) {
+    console.log('deviceTestError :: ');
+    console.log(error);
+    this.testing = false;
   }
 }

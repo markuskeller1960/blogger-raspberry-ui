@@ -23,10 +23,6 @@ export class SystemService {
     return this.sysinfo;
   }
 
-  testConnection(device: DeviceIndexModel): Observable<SystemInfoModel> {
-    return this.getSystemInfo();
-  }
-
   getRealTimeSystemInfo(): Observable<SystemInfoModel> {
     return this.getSystemInfo();
   }
@@ -36,6 +32,14 @@ export class SystemService {
       .interval(120000)
       .startWith(0)
       .flatMap(() => this.getSystemInfo())
+      .catch(this.handleError);
+  }
+
+  testConnection(device: DeviceIndexModel): Observable<any> {
+    const url = 'http://' + device.ipAddress + ':' + device.port + this.utilityService.getRestSystemInforURI();
+    console.log('Connecting to ' + device.ipAddress + ' ...');
+    return this.http.get(url)
+      .map(res => res.json())
       .catch(this.handleError);
   }
 
@@ -52,7 +56,7 @@ export class SystemService {
   }
 
   private handleError(error: any): Promise<any> {
-    console.log(error);
+    console.log('ERROR :: ' + error);
     return Promise.reject(error.message || error);
   }
 }
