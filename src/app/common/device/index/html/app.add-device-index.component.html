@@ -1,4 +1,4 @@
-<div class="flex-container" fxLayout="column">
+<div class="flex-container" fxLayout="column" fxFill>
   <h2>{{ formTitle }}</h2>
   <div class="flex-item" fxLayout="column">
     <label for="name">{{ lblName }}:</label>
@@ -19,10 +19,11 @@
     <button [ngStyle]="{'margin-left.px': 10}" md-raised-button (click)="test()">{{ btnTest }}</button>
   </div>
   <div *ngIf="testing" class="flex-item" fxLayout="column">
-    <div>{{ msgTesting }}</div>
+    <div class="messageArea">{{ msgTesting }}</div>
     <md-progress-bar mode="indeterminate" color="accent"></md-progress-bar>
   </div>
-  <div *ngIf="testingError" class="flex-item" fxLayout="column">
-    <div>{{ msgTestingFailed }}</div>
+  <div *ngIf="testingError" class="flex-item" fxLayout="row">
+    <md-icon class="flex-item app-message-error-icon">error</md-icon>
+    <div class="flex-item messageArea">{{ msgTestingFailed }}</div>
   </div>
 </div>

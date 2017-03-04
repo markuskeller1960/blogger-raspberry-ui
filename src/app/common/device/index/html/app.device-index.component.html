@@ -1,8 +1,8 @@
-<div class="flex-container app-device-index" fxLayout="column" fxFill>
-  <div class="flex-item" *ngIf="!showNewForm">
-    <md-icon class="app-device-index-icon" (click)="addDevice()" mdTooltip="Gerät hinzufügen" [mdTooltipPosition]="position">add_circle_outline</md-icon>
+<div class="flex-container" fxLayout="column" fxFill>
+  <div class="flex-item" *ngIf="!showNewForm" >
+    <md-icon class="app-device-index-icon" (click)="addDevice()" mdTooltip="{{msgAddDevice}}" [mdTooltipPosition]="position">add_circle_outline</md-icon>
   </div>
   <div class="flex-item app-device-index" *appVisibility="showNewForm">
-    <app-add-device-index (onCancelButtonClicked)="cancelNewDevice()"></app-add-device-index>
+    <app-add-device-index (onCancelButtonClicked)="cancelNewDevice()" (onNewDeviceAdded)="newDeviceAdded()"></app-add-device-index>
   </div>
 </div>

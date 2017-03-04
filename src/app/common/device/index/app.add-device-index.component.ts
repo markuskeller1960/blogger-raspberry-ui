@@ -27,6 +27,7 @@ export class AddDeviceIndexComponent implements OnInit {
   device: DeviceIndexModel;
 
   @Output() onCancelButtonClicked: EventEmitter<any> = new EventEmitter();
+  @Output() onNewDeviceAdded: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private deviceService: DeviceService, private systemService: SystemService) {}
@@ -42,7 +43,7 @@ export class AddDeviceIndexComponent implements OnInit {
     this.lblName = 'Name';
 
     this.msgTesting = 'Teste Verbindung zum Gerät an Adresse ';
-    this.msgTestingFailed = 'Das angegebene Gerät konnte nicht gefunden werden, bitte überprüfe deine Angaben im Fomular.';
+    this.msgTestingFailed = 'Das angegebene Gerät konnte nicht gefunden werden, bitte überprüfe deine Angaben im Fomular. Ist Tomcat auf dem Raspberry installiert und gestartet?';
   }
 
   cancel() {
@@ -53,12 +54,15 @@ export class AddDeviceIndexComponent implements OnInit {
   test() {
     this.msgTesting = `${this.msgTesting} ${this.device.ipAddress}`;
     this.testing = true;
+    this.testingError = false;
     this.systemService.testConnection(this.device).subscribe( () => this.deviceTestSuccess(), e => this.deviceTestError(e) );
   }
 
   private deviceTestSuccess() {
     this.testing = false;
     this.testingError = false;
+    this.deviceService.saveDevice(this.device);
+    this.onNewDeviceAdded.emit();
   }
 
   private deviceTestError(error: any) {

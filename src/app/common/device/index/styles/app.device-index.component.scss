@@ -1,13 +1,16 @@
 @import "../../../../../assets/style/global";
 
 .app-device-index {
-  margin: 5px;
-  padding: 0px;
-  padding-bottom: 20px;
+  margin: 10px;
+  padding: 0px 0px 20px;
 }
 
 .app-device-index-icon {
   font-size: 32px;
   color: green;
   cursor: pointer;
+  margin-top: 0px;
+  margin-right: 20px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }

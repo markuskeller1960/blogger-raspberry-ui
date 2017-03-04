@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { DeviceIndexModel } from '../../';
 import { DeviceService } from '../../../service';
@@ -9,15 +9,21 @@ import { DeviceService } from '../../../service';
   styleUrls: ['styles/app.device-index.component.scss']
 })
 
-export class DeviceIndexComponent {
+export class DeviceIndexComponent implements OnInit {
 
   private deviceList: Array<DeviceIndexModel> = [];
+
+  msgAddDevice: string;
 
   showNewForm = false;
   position = 'after';
 
   constructor(private deviceService: DeviceService ) {
     this.deviceList = this.deviceService.getDeviceList();
+  }
+
+  ngOnInit() {
+    this.msgAddDevice = 'Gerät hinzufügen';
   }
 
   getDevices(): Array<DeviceIndexModel> {
@@ -30,5 +36,9 @@ export class DeviceIndexComponent {
 
   cancelNewDevice() {
     this.showNewForm = false;
+  }
+
+  newDeviceAdded() {
+    console.log('Added XXXXXXXXXXXXXXXXXXXXXXX');
   }
 }

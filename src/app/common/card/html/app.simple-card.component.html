@@ -1,6 +1,6 @@
 <md-card class="flex-container app-simple-card" fxLayout="column">
   <md-card-title class="flex-item app-simple-card-header" *ngIf="hasTitle()" fxLayoutAlign="start stretch">
-    <div class="flex-container" fxLayout="row" fxLayoutAlign="start stretch">
+    <div class="flex-container" fxLayout="row" fxLayoutAlign="space-between stretch" fxFill>
       <span class="flex-item" fxLayoutAlign="start start" fxFlex="90%">{{ getTitle() }}</span>
       <span class="flex-item" fxLayoutAlign="end start" fxFlex>
         <md-icon class="app-simple-card-header-icon" (click)="toggle()">{{ toggleIcon }}</md-icon>
