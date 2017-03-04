@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import {DeviceService} from '../service/device.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +6,8 @@ import {DeviceService} from '../service/device.service';
   styleUrls: ['./styles/app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  private device = true;
+  constructor() {}
 
-  constructor(private deviceService: DeviceService) {}
-
-  ngOnInit(): void {
-    this.device = this.deviceService.hasDefaultDevice();
-  }
-
-  isConnected(): boolean {
-    return this.device;
-  }
 }

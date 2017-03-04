@@ -5,4 +5,11 @@
   <div class="flex-item app-device-index" *appVisibility="showNewForm">
     <app-add-device-index (onCancelButtonClicked)="cancelNewDevice()" (onNewDeviceAdded)="newDeviceAdded()"></app-add-device-index>
   </div>
+  <div class="flex-item" *appVisibility="hasDevices()">
+    <div class="flex-container" fxLayout="column" fxFill>
+      <div class="flex-item" *ngFor="let device of getDevices()">
+        {{ device.name }}
+      </div>
+    </div>
+  </div>
 </div>

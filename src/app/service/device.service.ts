@@ -10,8 +10,7 @@ export class DeviceService {
   private deviceIndex: Array<DeviceIndexModel> = [];
 
   constructor(private localStorageService: LocalStorageService) {
-    this.deviceIndex = localStorageService.loadObject(this.itemName);
-    this.deviceIndex = this.deviceIndex != null ? this.deviceIndex : [];
+    this.loadDevices();
   }
 
   hasDefaultDevice(): boolean {
@@ -54,7 +53,7 @@ export class DeviceService {
 
   private addDevice(device: DeviceIndexModel) {
     const index = this.isInList(device);
-    if (index > 0) {
+    if (index > -1) {
       this.deviceIndex.splice(index, 1);
     }
     this.deviceIndex.push(device);
@@ -67,6 +66,7 @@ export class DeviceService {
       const device = this.deviceIndex[i];
       if (device.ipAddress === searchDevice.ipAddress && device.port === searchDevice.port) {
         found = i;
+        console.log('Found :: ' + i)
         break;
       }
     }
@@ -80,6 +80,18 @@ export class DeviceService {
   private storeItem() {
     if (this.localStorageService.hasBrowserSupport()) {
       this.localStorageService.storeObject(this.itemName, this.deviceIndex);
+      this.loadDevices();
+      // this.localStorageService.clearStorage();
+    }
+  }
+
+  private loadDevices() {
+    this.deviceIndex = [];
+    const rawData = this.localStorageService.loadObject(this.itemName);
+    if(rawData != null) {
+      for(const item of rawData) {
+        this.deviceIndex.push(new DeviceIndexModel(item.name, item.ipAddress, item.port, item.active));
+      }
     }
   }
 }

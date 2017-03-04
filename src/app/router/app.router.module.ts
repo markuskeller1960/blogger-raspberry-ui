@@ -6,8 +6,9 @@ import { Router500Component } from './app.router-500.component';
 import { WelcomeComponent } from '../content/welcome/app.welcome.component';
 
 import {
-  DeviceSelectionComponent
-} from '../root/app.device-selection.component';
+  DeviceSelectionComponent,
+  MainComponent
+} from '../root';
 
 import {
   ApplicationComponent,
@@ -32,6 +33,7 @@ import {
 
 const appRoutes: Routes = [
   { path: 'start', component: DeviceSelectionComponent },
+  { path: 'main', component: MainComponent },
 
   { path: 'welcome', component: WelcomeComponent },
 

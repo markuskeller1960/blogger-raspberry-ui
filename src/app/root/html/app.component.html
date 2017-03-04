@@ -1,14 +1,1 @@
-<ng-container *ngIf="isConnected()">
-<md-sidenav-container class="flex-container" fxLayout="column" fxFill>
-  <md-sidenav #sidenav mode="side" class="app-sidenav flex-item" fxLayout="column">
-    <app-main-sidenav></app-main-sidenav>
-  </md-sidenav>
-  <div class="flex-item" fxLayout="column" fxLayoutAlign="start stretch">
-    <app-main-toolbar (onSideBarItemClicked)="sidenav.toggle()"></app-main-toolbar>
-    <router-outlet></router-outlet>
-  </div>
-</md-sidenav-container>
-</ng-container>
-<ng-container *ngIf="!isConnected()">
-  <router-outlet></router-outlet>
-</ng-container>
+<router-outlet></router-outlet>

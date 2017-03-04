@@ -73,6 +73,7 @@ import {
 
 import {
   AppComponent,
+  MainComponent,
   DeviceSelectionComponent
 } from './root';
 
@@ -80,6 +81,7 @@ import {
   declarations: [
     AppComponent,
     DeviceSelectionComponent,
+    MainComponent,
     DropdownMenuComponent,
     SimpleCardComponent,
     DeviceIndexComponent,
@@ -121,4 +123,5 @@ import {
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

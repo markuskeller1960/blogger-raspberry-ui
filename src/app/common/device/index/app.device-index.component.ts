@@ -30,6 +30,10 @@ export class DeviceIndexComponent implements OnInit {
     return this.deviceList;
   }
 
+  hasDevices(): boolean {
+    return this.deviceList.length > 0;
+  }
+
   addDevice() {
     this.showNewForm = true;
   }
@@ -39,6 +43,7 @@ export class DeviceIndexComponent implements OnInit {
   }
 
   newDeviceAdded() {
-    console.log('Added XXXXXXXXXXXXXXXXXXXXXXX');
+    this.showNewForm = false;
+    this.deviceList = this.deviceService.getDeviceList();
   }
 }
