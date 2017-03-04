@@ -20,15 +20,16 @@ export class AddDeviceIndexComponent implements OnInit {
   lblName: string;
 
   testing = false;
+  testingError = false;
+  msgTesting: string;
+  msgTestingFailed: string;
 
   device: DeviceIndexModel;
 
   @Output() onCancelButtonClicked: EventEmitter<any> = new EventEmitter();
 
   constructor(
-    private deviceService: DeviceService,
-    private systemService: SystemService
-  ) {}
+    private deviceService: DeviceService, private systemService: SystemService) {}
 
   ngOnInit(): void {
     this.formTitle = 'Raspberry hinzufügen';
@@ -39,6 +40,9 @@ export class AddDeviceIndexComponent implements OnInit {
     this.lblIP = 'IP-Adresse';
     this.lblPort = 'Port';
     this.lblName = 'Name';
+
+    this.msgTesting = 'Teste Verbindung zum Gerät an Adresse ';
+    this.msgTestingFailed = 'Das angegebene Gerät konnte nicht gefunden werden, bitte überprüfe deine Angaben im Fomular.';
   }
 
   cancel() {
@@ -47,18 +51,18 @@ export class AddDeviceIndexComponent implements OnInit {
   }
 
   test() {
+    this.msgTesting = `${this.msgTesting} ${this.device.ipAddress}`;
     this.testing = true;
     this.systemService.testConnection(this.device).subscribe( () => this.deviceTestSuccess(), e => this.deviceTestError(e) );
   }
 
   private deviceTestSuccess() {
-    console.log('deviceTestSuccess');
     this.testing = false;
+    this.testingError = false;
   }
 
   private deviceTestError(error: any) {
-    console.log('deviceTestError :: ');
-    console.log(error);
     this.testing = false;
+    this.testingError = true;
   }
 }

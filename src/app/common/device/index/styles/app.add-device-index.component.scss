@@ -1,3 +1,4 @@
+@import "../../../../../assets/style/global";
 
 .app-device-index-add {
   padding: 5px;
@@ -13,4 +14,9 @@ button {
   min-width: 140px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.app-device-index-add-testing {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
