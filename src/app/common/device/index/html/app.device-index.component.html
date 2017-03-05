@@ -7,9 +7,9 @@
   </div>
   <div class="flex-item" *appVisibility="hasDevices()">
     <div class="flex-container" fxLayout="column" fxFill>
-      <div class="flex-item" *ngFor="let device of getDevices()">
-        {{ device.name }}
-      </div>
+      <ng-container *ngFor="let device of getDevices()">
+        <app-device-index-item [deviceItem]="device"></app-device-index-item>
+      </ng-container>
     </div>
   </div>
 </div>

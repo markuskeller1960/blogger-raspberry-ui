@@ -1,0 +1,19 @@
+<div class="flex-container app-device-item-container" fxLayout="column" fxFill>
+  <div class="flex-item" fxLayout="row" fxLayoutAlign="start center">
+    <div class="flex-item app-device-item-entry">
+      <md-icon [ngClass]="getIconClass()">{{ getIcon() }}</md-icon>
+    </div>
+    <div class="flex-item app-device-item-entry">{{ item.name }}</div>
+  </div>
+  <div class="flex-item" fxLayout="row" fxLayoutAlign="space-around center">
+      <div class="flex-item app-device-item-detail">
+      {{  getDeviceAvailableMessage() }}
+    </div>
+    <div class="flex-item app-device-item-detail">
+      {{ getDeviceIpMessage() }}
+    </div>
+    <div class="flex-item app-device-item-detail">
+      {{ getDevicePortMessage() }}
+    </div>
+  </div>
+</div>

@@ -66,7 +66,6 @@ export class DeviceService {
       const device = this.deviceIndex[i];
       if (device.ipAddress === searchDevice.ipAddress && device.port === searchDevice.port) {
         found = i;
-        console.log('Found :: ' + i)
         break;
       }
     }
@@ -88,8 +87,8 @@ export class DeviceService {
   private loadDevices() {
     this.deviceIndex = [];
     const rawData = this.localStorageService.loadObject(this.itemName);
-    if(rawData != null) {
-      for(const item of rawData) {
+    if (rawData != null) {
+      for (const item of rawData) {
         this.deviceIndex.push(new DeviceIndexModel(item.name, item.ipAddress, item.port, item.active));
       }
     }

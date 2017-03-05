@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { DeviceIndexModel } from '../../';
 
@@ -8,16 +8,47 @@ import { DeviceIndexModel } from '../../';
   styleUrls: ['styles/app.device-index-item.component.scss']
 })
 
-export class DeviceIndexItemComponent {
+export class DeviceIndexItemComponent implements OnInit{
 
-  private item: DeviceIndexModel;
+  private iconActive = 'cast_connected';
+  private iconInactive = 'cast';
+  private activeIconClass = 'app-device-item-active-icon';
+  private inactiveIconClass = 'app-device-item-inactive-icon';
+
+  private msgDeviceActive: string;
+  private msgDeviceInactive: string;
+
+  item: DeviceIndexModel;
 
   @Input() set deviceItem(item: DeviceIndexModel) {
     this.item = item;
   }
 
-  getDevice(): DeviceIndexModel {
-    return this.item;
+  ngOnInit() {
+    const status = 'Status: ';
+    const ip = 'IP-Adresse: ';
+    this.msgDeviceActive = `${status} ${'online'}`;
+    this.msgDeviceInactive = `${status} ${'offline'}`;
+  }
+
+  getIcon(): string {
+    return this.item.active ? this.iconActive : this.iconInactive;
+  }
+
+  getIconClass(): string {
+    return this.item.active ? this.activeIconClass : this.inactiveIconClass;
+  }
+
+  getDeviceAvailableMessage(): string {
+    return this.item.active ? this.msgDeviceActive : this.msgDeviceInactive;
+  }
+
+  getDeviceIpMessage(): string {
+    return `${'IP-Adresse: '} ${this.item.ipAddress}`;
+  }
+
+  getDevicePortMessage(): string {
+    return `${'Port: '} ${this.item.port}`;
   }
 }
 

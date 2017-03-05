@@ -19,7 +19,7 @@ export class LocalStorageService {
     let object = null;
     if (typeof(this.hasBrowserSupport() && typeof(name) !== 'undefined') && name.length > 0) {
       const rawValue = localStorage.getItem(name);
-      if(typeof(rawValue) !== 'undefined') {
+      if (typeof(rawValue) !== 'undefined') {
         object = JSON.parse(rawValue);
       }
     }

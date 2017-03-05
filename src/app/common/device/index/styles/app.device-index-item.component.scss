@@ -1,0 +1,38 @@
+@import "../../../../../assets/style/global";
+
+.app-device-item-container {
+  padding: 5px;
+  border: 1px solid $raspi-medium-orange;
+}
+
+.app-device-item-entry {
+  margin: 5px;
+  font-size: large;
+  font-weight: bold;
+  color: $raspi-main-grey;
+}
+
+.app-device-item-detail {
+  @extend .app-device-item-entry;
+  font-size: medium;
+  font-weight: normal;
+}
+
+.app-device-item-icon {
+  font-size: 48px;
+  margin-right: 30px;
+}
+
+.app-device-item-active-icon {
+  @extend .app-device-item-icon;
+  cursor: pointer;
+  color: green;
+}
+
+.app-device-item-inactive-icon {
+  @extend .app-device-item-icon;
+  cursor: not-allowed;
+  color: red;
+}
+
+

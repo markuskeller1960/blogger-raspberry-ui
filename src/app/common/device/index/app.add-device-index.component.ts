@@ -61,11 +61,13 @@ export class AddDeviceIndexComponent implements OnInit {
   private deviceTestSuccess() {
     this.testing = false;
     this.testingError = false;
+    this.device.active = true;
     this.deviceService.saveDevice(this.device);
     this.onNewDeviceAdded.emit();
   }
 
   private deviceTestError(error: any) {
+    this.device.active = false;
     this.testing = false;
     this.testingError = true;
   }
