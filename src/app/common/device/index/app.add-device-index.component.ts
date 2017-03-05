@@ -22,6 +22,7 @@ export class AddDeviceIndexComponent implements OnInit {
   testing = false;
   testingError = false;
   msgTesting: string;
+  msgTestingText: string;
   msgTestingFailed: string;
 
   device: DeviceIndexModel;
@@ -41,8 +42,7 @@ export class AddDeviceIndexComponent implements OnInit {
     this.lblIP = 'IP-Adresse';
     this.lblPort = 'Port';
     this.lblName = 'Name';
-
-    this.msgTesting = 'Teste Verbindung zum Gerät an Adresse ';
+    this.msgTestingText = 'Teste Verbindung zum Gerät an Adresse ';
     this.msgTestingFailed = 'Das angegebene Gerät konnte nicht gefunden werden, bitte überprüfe deine Angaben im Fomular. Ist Tomcat auf dem Raspberry installiert und gestartet?';
   }
 
@@ -52,7 +52,7 @@ export class AddDeviceIndexComponent implements OnInit {
   }
 
   test() {
-    this.msgTesting = `${this.msgTesting} ${this.device.ipAddress}`;
+    this.msgTesting = `${this.msgTestingText} ${this.device.ipAddress}`;
     this.testing = true;
     this.testingError = false;
     this.systemService.testConnection(this.device).subscribe( () => this.deviceTestSuccess(), e => this.deviceTestError(e) );
