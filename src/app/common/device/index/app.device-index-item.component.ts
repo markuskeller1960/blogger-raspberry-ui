@@ -8,7 +8,7 @@ import { DeviceIndexModel } from '../../';
   styleUrls: ['styles/app.device-index-item.component.scss']
 })
 
-export class DeviceIndexItemComponent implements OnInit{
+export class DeviceIndexItemComponent implements OnInit {
 
   private iconActive = 'cast_connected';
   private iconInactive = 'cast';
