@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { DeviceIndexModel } from '../../';
+import { SystemService } from '../../../service';
 
 @Component({
   selector: 'app-device-index-item',
@@ -20,8 +21,12 @@ export class DeviceIndexItemComponent implements OnInit {
 
   item: DeviceIndexModel;
 
+  constructor(private systemService: SystemService) {}
+
   @Input() set deviceItem(item: DeviceIndexModel) {
+    item.active = false;
     this.item = item;
+    this.systemService.testConnection(item).subscribe( (json) => this.initItem(json), () => this.deactivateItem() );
   }
 
   ngOnInit() {
@@ -49,6 +54,17 @@ export class DeviceIndexItemComponent implements OnInit {
 
   getDevicePortMessage(): string {
     return `${'Port: '} ${this.item.port}`;
+  }
+
+  private initItem(response: any) {
+    console.log(this.item.ipAddress + ' is answering');
+    this.item.active = response.success ? true : false;
+    console.log(this.item.ipAddress + ' response success: ' + this.item.active);
+  }
+
+  private deactivateItem() {
+    this.item.active = false;
+    console.log(this.item.ipAddress + ' is not answering');
   }
 }
 
