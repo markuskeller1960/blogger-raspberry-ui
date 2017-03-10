@@ -47,7 +47,7 @@ export class AddDeviceIndexComponent implements OnInit {
   }
 
   cancel() {
-    this.device = new DeviceIndexModel('Mein Raspberry PI', '192.168.6.143', '8080', false);
+    this.device = new DeviceIndexModel('Mein Raspberry PI', '127.0.0.1', '8080', false);
     this.onCancelButtonClicked.emit();
   }
 

@@ -13,7 +13,8 @@ export class SimpleCardComponent {
   private title: string;
   private subtitle: string;
 
-  showContent = false;
+  showContent = true;
+  collapsible = true;
   toggleIcon = this.icoOpen;
 
   @Input() set cardSubtitle(subtitle: string) {
@@ -26,6 +27,10 @@ export class SimpleCardComponent {
 
   @Input() set isOpen(status: boolean) {
     this.showContent = status;
+  }
+
+  @Input() set isCollapsible(status: boolean) {
+    this.collapsible = status;
   }
 
   toggle() {

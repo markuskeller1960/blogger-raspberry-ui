@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { DeviceIndexModel } from '../../';
 import { SystemService } from '../../../service';
@@ -18,10 +18,9 @@ export class DeviceIndexItemComponent implements OnInit {
 
   private msgDeviceActive: string;
   private msgDeviceInactive: string;
+  private msgRemoveDevice: string;
 
   item: DeviceIndexModel;
-
-  constructor(private systemService: SystemService) {}
 
   @Input() set deviceItem(item: DeviceIndexModel) {
     item.active = false;
@@ -29,11 +28,16 @@ export class DeviceIndexItemComponent implements OnInit {
     this.systemService.testConnection(item).subscribe( (json) => this.initItem(json), () => this.deactivateItem() );
   }
 
+  @Output() onDeviceRemoved: EventEmitter<DeviceIndexModel> = new EventEmitter();
+
+  constructor(private systemService: SystemService) {}
+
   ngOnInit() {
     const status = 'Status: ';
     const ip = 'IP-Adresse: ';
     this.msgDeviceActive = `${status} ${'online'}`;
     this.msgDeviceInactive = `${status} ${'offline'}`;
+    this.msgRemoveDevice = 'Dieses Raspberry aus der Liste löschen';
   }
 
   getIcon(): string {
@@ -54,6 +58,14 @@ export class DeviceIndexItemComponent implements OnInit {
 
   getDevicePortMessage(): string {
     return `${'Port: '} ${this.item.port}`;
+  }
+
+  getRemoveDeviceMessage(): string {
+    return this.msgRemoveDevice;
+  }
+
+  removeDevice() {
+    this.onDeviceRemoved.emit(this.item);
   }
 
   private initItem(response: any) {

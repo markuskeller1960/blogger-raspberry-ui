@@ -23,7 +23,7 @@ export class DeviceIndexComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.msgAddDevice = 'Gerät hinzufügen';
+    this.msgAddDevice = 'Raspberry hinzufügen';
   }
 
   getDevices(): Array<DeviceIndexModel> {
@@ -44,6 +44,11 @@ export class DeviceIndexComponent implements OnInit {
 
   newDeviceAdded() {
     this.showNewForm = false;
+    this.deviceList = this.deviceService.getDeviceList();
+  }
+
+  deviceRemoved(device: DeviceIndexModel) {
+    this.deviceService.removeDevice(device);
     this.deviceList = this.deviceService.getDeviceList();
   }
 }

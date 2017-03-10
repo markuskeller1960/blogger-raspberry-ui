@@ -2,11 +2,12 @@
 
 .app-device-item-container {
   padding: 5px;
-  border: 1px solid $raspi-medium-orange;
+  border: 1px solid $raspi-medium-yellow;
+  padding-bottom: 15px;
 }
 
 .app-device-item-entry {
-  margin: 5px;
+  margin: 2px;
   font-size: large;
   font-weight: bold;
   color: $raspi-main-grey;
@@ -33,6 +34,16 @@
   @extend .app-device-item-icon;
   cursor: not-allowed;
   color: red;
+}
+
+.app-device-item-remove-icon {
+  @extend .app-device-item-icon;
+  margin: 0px;
+  padding: 0;
+  cursor: pointer;
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 
