@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UtilityService {
-  private applicationName = 'Rasperry PI Blogger';
+  private applicationName = 'Raspberry Lemon';
   private applicationVersion = '1.0 beta 1';
 
   private restServiceURL = 'http://192.168.6.143:8080';
