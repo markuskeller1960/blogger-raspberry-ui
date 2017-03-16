@@ -64,6 +64,7 @@ import {
 
 // services (singleton)
 import {
+  ApplicationService,
   MenuService,
   UtilityService,
   SystemService,
@@ -115,6 +116,7 @@ import {
     AppRouterModule
   ],
   providers: [
+    ApplicationService,
     MenuService,
     UtilityService,
     SystemService,
