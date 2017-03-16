@@ -19,6 +19,7 @@ export class DeviceIndexItemComponent implements OnInit {
   private msgDeviceActive: string;
   private msgDeviceInactive: string;
   private msgRemoveDevice: string;
+  private msgRefreshDevice: string;
 
   item: DeviceIndexModel;
 
@@ -29,6 +30,7 @@ export class DeviceIndexItemComponent implements OnInit {
   }
 
   @Output() onDeviceRemoved: EventEmitter<DeviceIndexModel> = new EventEmitter();
+  @Output() onDeviceConnected: EventEmitter<DeviceIndexModel> = new EventEmitter();
 
   constructor(private systemService: SystemService) {}
 
@@ -38,6 +40,7 @@ export class DeviceIndexItemComponent implements OnInit {
     this.msgDeviceActive = `${status} ${'online'}`;
     this.msgDeviceInactive = `${status} ${'offline'}`;
     this.msgRemoveDevice = 'Dieses Raspberry aus der Liste löschen';
+    this.msgRefreshDevice = 'Verbindung erneut testen';
   }
 
   getIcon(): string {
@@ -60,8 +63,22 @@ export class DeviceIndexItemComponent implements OnInit {
     return `${'Port: '} ${this.item.port}`;
   }
 
+  connectToDevice() {
+    if (this.item.active) {
+      this.onDeviceConnected.emit(this.item);
+    }
+  }
+
   getRemoveDeviceMessage(): string {
     return this.msgRemoveDevice;
+  }
+
+  getRefreshDeviceMessage(): string {
+    return this.msgRefreshDevice;
+  }
+
+  refreshDevice() {
+    this.systemService.testConnection(this.item).subscribe( (json) => this.initItem(json), () => this.deactivateItem() );
   }
 
   removeDevice() {

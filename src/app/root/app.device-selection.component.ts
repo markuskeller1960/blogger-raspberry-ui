@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-import {UtilityService} from '../service';
+import { UtilityService } from '../service';
+import { DeviceIndexModel } from '../common';
 
 @Component({
   selector: 'app-device-selection',
@@ -13,7 +15,7 @@ export class DeviceSelectionComponent implements OnInit {
   private title: string;
   private subtitle: string;
 
-  constructor(private utilityService: UtilityService) {}
+  constructor(private utilityService: UtilityService, private router: Router) {}
 
   ngOnInit() {
     this.title = this.utilityService.getApplicationName();
@@ -26,5 +28,9 @@ export class DeviceSelectionComponent implements OnInit {
 
   getSubtitle(): string {
     return this.subtitle;
+  }
+
+  goToMainView(ddevice: DeviceIndexModel) {
+    this.router.navigate(['/main']);
   }
 }

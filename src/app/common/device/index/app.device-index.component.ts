@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { DeviceIndexModel } from '../../';
 import { DeviceService } from '../../../service';
@@ -14,9 +14,10 @@ export class DeviceIndexComponent implements OnInit {
   private deviceList: Array<DeviceIndexModel> = [];
 
   msgAddDevice: string;
-
   showNewForm = false;
   position = 'after';
+
+  @Output() onDeviceConnected: EventEmitter<DeviceIndexModel> = new EventEmitter();
 
   constructor(private deviceService: DeviceService ) {
     this.deviceList = this.deviceService.getDeviceList();
@@ -50,5 +51,10 @@ export class DeviceIndexComponent implements OnInit {
   deviceRemoved(device: DeviceIndexModel) {
     this.deviceService.removeDevice(device);
     this.deviceList = this.deviceService.getDeviceList();
+  }
+
+  deviceConnected(device: DeviceIndexModel) {
+    console.log('connecting to device ' + device.name);
+    this.onDeviceConnected.emit(device);
   }
 }

@@ -1,10 +1,11 @@
 <div class="flex-container app-device-item-container" fxLayout="column" fxFill>
-  <div fxFill fxLayoutAlign="end stretch">
-    <md-icon class="app-device-item-remove-icon" (click)="removeDevice()" mdTooltip="{{getRemoveDeviceMessage()}}" >remove</md-icon>
+  <div fxFill fxLayoutAlign="end stretch" fxLayout="row">
+    <md-icon class="app-device-item-refresh-icon" (click)="refreshDevice()" mdTooltip="{{ getRefreshDeviceMessage() }}">refresh</md-icon>
+    <md-icon class="app-device-item-remove-icon" (click)="removeDevice()" mdTooltip="{{ getRemoveDeviceMessage() }}">remove</md-icon>
   </div>
   <div fxLayout="row" fxLayoutAlign="start center">
     <div class="app-device-item-entry">
-      <md-icon [ngClass]="getIconClass()">{{ getIcon() }}</md-icon>
+      <md-icon (click)="connectToDevice()" [ngClass]="getIconClass()">{{ getIcon() }}</md-icon>
     </div>
     <div class="app-device-item-entry">{{ item.name }}</div>
   </div>
