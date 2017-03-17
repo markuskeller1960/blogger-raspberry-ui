@@ -33,23 +33,21 @@ import {
 
 const appRoutes: Routes = [
   { path: 'start', component: DeviceSelectionComponent },
-  { path: 'main', component: MainComponent },
 
-  { path: 'welcome', component: WelcomeComponent },
-
-  { path: 'application-main', component: ApplicationComponent},
-  { path: 'application-dashboard', component: ApplicationDashboardComponent},
-
-  { path: 'settings-list', component: SettingsListComponent },
-  { path: 'settings-edit', component: SettingsEditComponent },
-
-  { path: 'statistic-dashboard', component: StatisticDashboardComponent },
-  { path: 'statistic-application', component: StatisticApplicationComponent },
-
-  { path: 'help-documentation', component: HelpDocumentationComponent },
-  { path: 'help-exceptions', component: HelpExceptionsComponent },
-  { path: 'help-misc', component: HelpMiscComponent },
-
+  { path: 'main', component: MainComponent,
+    children: [
+      { path: 'welcome', component: WelcomeComponent },
+      { path: 'application-main', component: ApplicationComponent},
+      { path: 'application-dashboard', component: ApplicationDashboardComponent},
+      { path: 'settings-list', component: SettingsListComponent },
+      { path: 'settings-edit', component: SettingsEditComponent },
+      { path: 'statistic-dashboard', component: StatisticDashboardComponent },
+      { path: 'statistic-application', component: StatisticApplicationComponent },
+      { path: 'help-documentation', component: HelpDocumentationComponent },
+      { path: 'help-exceptions', component: HelpExceptionsComponent },
+      { path: 'help-misc', component: HelpMiscComponent }
+    ]
+  },
   { path: '', redirectTo: '/start', pathMatch: 'full' },
   { path: 'error-500', component: Router500Component },
   { path: '**', component: Router404Component }

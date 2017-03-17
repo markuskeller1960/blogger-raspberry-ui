@@ -45,24 +45,24 @@ export class MenuService {
     switch ( index ) {
       case 'id-application':
         menu.setTitle('Anwendungen', 'assessment');
-        menu.addItem(new DropdownMenuItem('Übersicht' , 'application-dashboard', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Anwendungen' , 'application-main', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Übersicht' , './application-dashboard', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Anwendungen' , './application-main', this.menuIcon));
         break;
       case 'id-statistics':
         menu.setTitle('System', 'assessment');
-        menu.addItem(new DropdownMenuItem('Übersicht' , 'statistic-dashboard', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Anwendungen' , 'statistic-application', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Übersicht' , './statistic-dashboard', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Anwendungen' , './statistic-application', this.menuIcon));
         break;
       case 'id-settings':
         menu.setTitle('Einstellungen', 'settings');
-        menu.addItem(new DropdownMenuItem('Übersicht' , 'settings-list', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Einstellung ändern' , 'settings-edit', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Übersicht' , './settings-list', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Einstellung ändern' , './settings-edit', this.menuIcon));
         break;
       case 'id-help':
         menu.setTitle('Hilfe', 'help_outline');
-        menu.addItem(new DropdownMenuItem('Dokumentation' , 'help-documentation', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Fehlerbehandlung' , 'help-exceptions', this.menuIcon));
-        menu.addItem(new DropdownMenuItem('Anwendungen' , 'help-misc', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Dokumentation' , './help-documentation', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Fehlerbehandlung' , './help-exceptions', this.menuIcon));
+        menu.addItem(new DropdownMenuItem('Anwendungen' , './help-misc', this.menuIcon));
         break;
     }
     return menu;

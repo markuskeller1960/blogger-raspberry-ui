@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./styles/app.main.component.scss']
 })
 
-export class MainComponent {
-
-}
+export class MainComponent {}
 
