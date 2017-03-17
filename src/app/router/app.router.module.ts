@@ -33,7 +33,6 @@ import {
 
 const appRoutes: Routes = [
   { path: 'start', component: DeviceSelectionComponent },
-
   { path: 'main', component: MainComponent,
     children: [
       { path: 'welcome', component: WelcomeComponent },
@@ -57,4 +56,5 @@ const appRoutes: Routes = [
   imports: [ RouterModule.forRoot(appRoutes) ],
   exports: [ RouterModule ]
 })
+
 export class AppRouterModule {}
