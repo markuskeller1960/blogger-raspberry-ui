@@ -9,7 +9,7 @@
     </div>
     <div class="app-device-item-entry">{{ item.name }}</div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-between center">
+  <div *ngIf="!isConecting()" fxLayout="row" fxLayoutAlign="space-between center">
       <div class="app-device-item-detail">
       {{  getDeviceAvailableMessage() }}
     </div>
@@ -20,4 +20,5 @@
       {{ getDevicePortMessage() }}
     </div>
   </div>
+  <md-progress-bar *ngIf="isConecting()" mode="indeterminate" color="accent"></md-progress-bar>
 </div>

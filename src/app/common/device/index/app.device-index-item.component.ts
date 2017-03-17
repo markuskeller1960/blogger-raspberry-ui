@@ -11,6 +11,8 @@ import { SystemService } from '../../../service';
 
 export class DeviceIndexItemComponent implements OnInit {
 
+  private connecting = false;
+
   private iconActive = 'cast_connected';
   private iconInactive = 'cast';
   private activeIconClass = 'app-device-item-active-icon';
@@ -69,6 +71,10 @@ export class DeviceIndexItemComponent implements OnInit {
     }
   }
 
+  isConecting(): boolean {
+    return this.connecting;
+  }
+
   getRemoveDeviceMessage(): string {
     return this.msgRemoveDevice;
   }
@@ -78,6 +84,7 @@ export class DeviceIndexItemComponent implements OnInit {
   }
 
   refreshDevice() {
+    this.connecting = true;
     this.systemService.testConnection(this.item).subscribe( (json) => this.initItem(json), () => this.deactivateItem() );
   }
 
@@ -89,11 +96,13 @@ export class DeviceIndexItemComponent implements OnInit {
     console.log(this.item.ipAddress + ' is answering');
     this.item.active = response.success ? true : false;
     console.log(this.item.ipAddress + ' response success: ' + this.item.active);
+    this.connecting = false;
   }
 
   private deactivateItem() {
     this.item.active = false;
     console.log(this.item.ipAddress + ' is not answering');
+    this.connecting = false;
   }
 }
 

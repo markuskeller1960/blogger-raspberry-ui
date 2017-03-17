@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import {Subscription} from 'rxjs/Subscription';
+
+import {ApplicationService} from '../service/application.service';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +9,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./styles/app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
 
-  constructor() {}
+  private connectedSubscription: Subscription;
+  private connected: boolean;
 
+  constructor(private applicationService: ApplicationService) {}
+
+  ngOnInit() {
+    this.connectedSubscription = this.applicationService.isConnected().subscribe(connected => { this.connected = connected; });
+  }
+
+  ngOnDestroy() {
+    this.connectedSubscription.unsubscribe();
+  }
+
+  isConnected(): boolean {
+    return this.connected;
+  }
 }
