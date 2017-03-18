@@ -60,7 +60,9 @@ import {
 import {
   AppRouterModule,
   Router404Component,
-  Router500Component } from './router';
+  Router500Component,
+  MainRouterGuard
+} from './router';
 
 // services (singleton)
 import {
@@ -121,7 +123,8 @@ import {
     UtilityService,
     SystemService,
     DeviceService,
-    LocalStorageService
+    LocalStorageService,
+    MainRouterGuard
   ],
   bootstrap: [AppComponent]
 })
