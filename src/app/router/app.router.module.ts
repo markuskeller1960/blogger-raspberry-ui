@@ -35,7 +35,7 @@ import {
 
 const appRoutes: Routes = [
   { path: 'start', component: DeviceSelectionComponent },
-  { path: 'main', component: MainComponent, canActivate: [MainRouterGuard],
+  { path: 'main', component: MainComponent, canActivate: [MainRouterGuard], canActivateChild: [MainRouterGuard],
     children: [
       { path: 'welcome', component: WelcomeComponent },
       { path: 'application-main', component: ApplicationComponent},

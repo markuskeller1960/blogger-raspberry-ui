@@ -36,6 +36,6 @@ export class DeviceSelectionComponent implements OnInit {
 
   connectToDevice(device: DeviceIndexModel) {
     this.applicationService.setConnectedDevice(device);
-    this.router.navigate(['/main']);
+    this.router.navigate(['main', 'welcome']);
   }
 }
