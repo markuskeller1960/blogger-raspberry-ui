@@ -1,6 +1,6 @@
 <md-sidenav-container class="flex-container" fxLayout="column" fxFill>
   <md-sidenav #sidenav mode="side" class="app-sidenav flex-item" fxLayout="column">
-    <app-main-sidenav></app-main-sidenav>
+    <app-main-sidenav (onSideBarItemClicked)="sidenav.toggle()"></app-main-sidenav>
   </md-sidenav>
   <div class="flex-item" fxLayout="column" fxLayoutAlign="start stretch">
     <app-main-toolbar (onSideBarItemClicked)="sidenav.toggle()"></app-main-toolbar>

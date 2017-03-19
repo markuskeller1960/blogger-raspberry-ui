@@ -1,5 +1,4 @@
-import { Component, Output, EventEmitter,  OnInit, OnDestroy } from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import { Component, Output, EventEmitter,  OnInit } from '@angular/core';
 
 import { UtilityService, MenuService } from '../service';
 
@@ -8,10 +7,9 @@ import { UtilityService, MenuService } from '../service';
   templateUrl: './html/app.toolbar.component.html',
   styleUrls: ['./styles/app.toolbar.component.scss'],
 })
-export class MainToolbarComponent implements OnInit, OnDestroy {
+export class MainToolbarComponent implements OnInit {
 
   private appName = '';
-  private subscription: Subscription;
 
   @Output() onSideBarItemClicked: EventEmitter<any> = new EventEmitter();
 
@@ -21,11 +19,6 @@ export class MainToolbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.appName = this.utilityService.getApplicationName();
-    this.subscription = this.menuService.getIconObserver().subscribe(() => this.clickSidebarIcon());
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   clickSidebarIcon() {

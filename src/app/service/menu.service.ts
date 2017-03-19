@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {Observable} from 'rxjs/Observable';
 
 import { DropdownMenu } from '../common/menu/dropdown/model/dropdown-menu.model';
 import { DropdownMenuItem } from '../common/menu/dropdown/model/dropdown-menu-item.model';
@@ -10,20 +8,11 @@ export class MenuService {
 
   private menuItems: Array<DropdownMenu> = [];
   private menuIcon = 'more_vert';
-  private sidenavState = new BehaviorSubject<boolean>(false);
 
   getItems(): Promise<Array<DropdownMenu>>  {
     return Promise
       .resolve(this.createMenu())
       .catch(this.onError);
-  }
-
-  getIconObserver(): Observable<boolean> {
-    return this.sidenavState.asObservable();
-  }
-
-  sidenavItemClicked() {
-    this.sidenavState.next(!this.sidenavState.getValue());
   }
 
   private createMenu(): Array<DropdownMenu>  {

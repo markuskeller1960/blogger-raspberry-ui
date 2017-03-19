@@ -9,14 +9,14 @@
   background-color: $raspi-medium-yellow;
   padding: 5px;
   padding-bottom: 0;
-  color:  $raspi-main-blue
+  color: $raspi-card-font-color;
 }
 
 .app-simple-card-subtitle {
   padding: 5px;
   padding-bottom: 0;
   font-weight: bold;
-  color: $raspi-main-grey;
+  color: $raspi-card-font-color;
 }
 
 .app-simple-card-header-icon {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { DropdownMenu } from '../common';
 import { MenuService } from '../service';
@@ -11,6 +11,8 @@ import { MenuService } from '../service';
 export class MainSidenavComponent implements OnInit {
 
   private menuItems: Array<DropdownMenu> = [];
+
+  @Output() onSideBarItemClicked: EventEmitter<any> = new EventEmitter();
 
   constructor(private menuService: MenuService) {}
 
@@ -25,7 +27,7 @@ export class MainSidenavComponent implements OnInit {
   }
 
   sidenavItemClicked() {
-    this.menuService.sidenavItemClicked();
+    this.onSideBarItemClicked.emit({value: 'MainSidenavHeaderComponent:sidebarItem:clicked'});
   }
 
   private loadingItemsError(error: any) {
