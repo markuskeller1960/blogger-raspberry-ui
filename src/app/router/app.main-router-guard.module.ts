@@ -15,7 +15,7 @@ export class MainRouterGuard implements CanActivate, CanActivateChild {
   }
 
   canActivate() {
-    if(!this.connected) {
+    if (!this.connected) {
       this.router.navigate(['/start']);
     }
     return this.connected;
