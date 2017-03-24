@@ -1,6 +1,6 @@
-<div class="flex-container app-sidenav-header" fxLayout="column" fxLayoutAlign="start stretch">
+<div *ngIf="hasActiveDevice()" class="flex-container app-sidenav-header" fxLayout="column" fxLayoutAlign="start stretch">
     <md-icon class="flex-item app-sidenav-header-icon" (click)="clickSidebarIcon()" fxLayoutAlign="start stretch">close</md-icon>
-    <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">Dein Raspberry</div>
+    <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">{{ activeDevice.name }}</div>
     <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">läuft auf Host</div>
-    <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">192.168.6.1</div>
+    <div class="flex-item text" fxFlex="16%" fxLayoutAlign="center center">{{ activeDevice.ipAddress }}</div>
 </div>
