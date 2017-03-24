@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-welcome-header',
@@ -6,16 +6,11 @@ import { Component} from '@angular/core';
   styleUrls: ['styles/app.welcome-header.component.scss']
 })
 
-export class WelcomeHeaderComponent {
+export class WelcomeHeaderComponent implements OnInit {
 
-  private ico_close = 'expand_less';
-  private ico_open = 'expand_more';
+  msgTitle: string;
 
-  isCardBodyVisible = true;
-  cardBodyIcon = this.ico_open;
-
-  toggleCardBody() {
-    this.isCardBodyVisible = !this.isCardBodyVisible;
-    this.cardBodyIcon = this.isCardBodyVisible ? this.ico_close : this.ico_open;
+  ngOnInit() {
+    this.msgTitle = 'Willkommen';
   }
 }
