@@ -15,6 +15,7 @@ export class MainSidenavHeaderComponent implements OnInit, OnDestroy {
   private deviceActive = false;
 
   activeDevice: DeviceIndexModel;
+  msgRunningHost: string;
 
   @Output() onSideBarItemHeaderClicked: EventEmitter<any> = new EventEmitter();
 
@@ -23,6 +24,7 @@ export class MainSidenavHeaderComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.activeDeviceSubscription = this.applicationService.getConnectedDevice()
       .subscribe((device) => this.initDevice(device));
+    this.msgRunningHost = 'läuft auf Host';
   }
 
   ngOnDestroy() {
