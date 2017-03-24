@@ -19,10 +19,11 @@ export class ApplicationService {
     if (typeof(device) !== 'undefined') {
       this.connectedDevice.next(device);
       this.connected.next(true);
-      console.log('Connected device has changed');
+      console.log('Connected device has been changed successfully');
     } else {
       this.connected.next(false);
       this.connectedDevice.next(null);
+      console.log('Connected device has been set to null!');
     }
   }
 
